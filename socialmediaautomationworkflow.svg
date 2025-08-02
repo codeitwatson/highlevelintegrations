@@ -1,0 +1,179 @@
+<svg viewBox="0 0 1200 850" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <dropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000508" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#98633F"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#214D72"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="850" fill="#000508"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" fill="#98633F" font-family="serif" font-size="30" font-weight="bold">
+    Social Media Automation Platform
+  </text>
+  
+  <!-- BOXES -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Content Creation</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• AI Image Generation</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Stock Photo Library</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• AI Slide Generator</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Visual Content</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Brand Consistency</text>
+    <text x="100" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Automated Creation</text>
+  </g>
+  
+  <g transform="translate(320, 100)">
+    <rect x="0" y="0" width="180" height="120" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="90" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Text Optimization</text>
+    <text x="90" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Custom Messaging</text>
+    <text x="90" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Hashtag Strategy</text>
+    <text x="90" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Engagement Hooks</text>
+    <text x="90" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Platform Tailoring</text>
+    <text x="90" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Visibility Maximum</text>
+  </g>
+  
+  <g transform="translate(570, 100)">
+    <rect x="0" y="0" width="220" height="140" rx="10" fill="#404040" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="110" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Timing &amp; Scheduling</text>
+    <text x="110" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Audience Activity Analysis</text>
+    <text x="110" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Peak Engagement Times</text>
+    <text x="110" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Time Zone Optimization</text>
+    <text x="110" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Schedule Automation</text>
+    <text x="110" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Posting Queues</text>
+    <text x="110" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Smart Timing</text>
+  </g>
+  
+  <g transform="translate(860, 100)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Multi-Platform Posting</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Facebook/IG</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Twitter/X</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• LinkedIn</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• TikTok</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• YouTube &amp; more</text>
+    <text x="100" y="125" text-anchor="middle" fill="#214D72" font-family="sans-serif" font-size="11" font-weight="bold">Universal Distribution</text>
+  </g>
+  
+  <!-- Automated Responses -->
+  <g transform="translate(200, 340)">
+    <rect x="0" y="0" width="220" height="140" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="110" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Automated Responses</text>
+    <text x="110" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Comment Responses</text>
+    <text x="110" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Direct Message Replies</text>
+    <text x="110" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Engagement Automation</text>
+    <text x="110" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Community Management</text>
+    <text x="110" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• User Interaction</text>
+    <text x="110" y="125" text-anchor="middle" fill="#214D72" font-family="sans-serif" font-size="11" font-weight="bold">Smart Engagement</text>
+  </g>
+  
+  <!-- Analytics & Tracking -->
+  <g transform="translate(480, 340)">
+    <rect x="0" y="0" width="240" height="140" rx="10" fill="#404040" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="120" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Analytics &amp; Tracking</text>
+    <text x="120" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Views &amp; Impressions</text>
+    <text x="120" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Likes &amp; Reactions</text>
+    <text x="120" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Comments &amp; Shares</text>
+    <text x="120" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Engagement Rates</text>
+    <text x="120" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Performance Reports</text>
+    <text x="120" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Data-Driven Insights</text>
+  </g>
+  
+  <!-- Content Strategy -->
+  <g transform="translate(780, 340)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Content Strategy</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Content Calendar</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Theme Planning</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Campaign Management</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Brand Consistency</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• A/B Testing</text>
+    <text x="100" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="12" font-weight="bold">Strategic Planning</text>
+  </g>
+  
+  <!-- Main Flow Arrows -->
+  <path d="M 260 170 L 310 170" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 510 170 L 560 170" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 800 170 L 850 170" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Supporting Arrows -->
+  <path d="M 310 250 L 310 330" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 600 250 L 600 330" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 880 250 L 880 330" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Blue Feedback Loop -->
+  <path
+    d="M 1080 170 Q 1130 220 1130 360 Q 1130 410 1070 410 L 1000 410"
+    stroke="#214D72"
+    stroke-width="4"
+    fill="none"
+    stroke-dasharray="6,6"
+    marker-end="url(#arrowhead2)"
+  />
+  <text x="1000" y="360" fill="#214D72" font-family="sans-serif" font-size="14" font-weight="bold" font-style="italic">
+    Continuous
+  </text>
+  <text x="1020" y="375" fill="#214D72" font-family="sans-serif" font-size="14" font-weight="bold" font-style="italic">
+    Optimization
+  </text>
+  
+  <!-- Key Business Benefits -->
+  <g transform="translate(50, 530)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(33, 77, 114, 0.2)" stroke="#98633F" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="18" font-weight="bold">Key Business Benefits</text>
+    <text x="150" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Complete Automation</text>
+    <text x="150" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Set &amp; Forget System</text>
+    <text x="350" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">AI-Powered Content</text>
+    <text x="350" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Creative Automation</text>
+    <text x="550" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Optimal Engagement</text>
+    <text x="550" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Smart Timing</text>
+    <text x="750" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Universal Reach</text>
+    <text x="750" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">All Platforms</text>
+    <text x="950" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Data-Driven Growth</text>
+    <text x="950" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Performance Insights</text>
+  </g>
+  
+  <!-- Technology Integration -->
+  <g transform="translate(50, 650)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(152, 99, 63, 0.2)" stroke="#214D72" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#214D72" font-family="sans-serif" font-size="18" font-weight="bold">Technology Integration</text>
+    <text x="95" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">AI Image Generation</text>
+    <text x="95" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Visual Content Engine</text>
+    <text x="225" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Stock Photo APIs</text>
+    <text x="225" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Content Library</text>
+    <text x="355" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Social Media APIs</text>
+    <text x="355" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Platform Integration</text>
+    <text x="485" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Scheduling Engine</text>
+    <text x="485" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Timing Optimization</text>
+    <text x="615" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Analytics Tools</text>
+    <text x="615" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Performance Tracking</text>
+    <text x="745" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Automation Engine</text>
+    <text x="745" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Response Management</text>
+    <text x="875" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Content Calendar</text>
+    <text x="875" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Strategic Planning</text>
+    <text x="1005" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">AI Text Optimization</text>
+    <text x="1005" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Engagement Maximization</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(25, 750)">
+    <circle cx="80" cy="20" r="8" fill="#98633F"/>
+    <text x="95" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Gold - Content &amp; Posting</text>
+    <circle cx="250" cy="20" r="8" fill="#214D72"/>
+    <text x="265" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Blue - Strategy &amp; Creation</text>
+    <circle cx="430" cy="20" r="8" fill="#404040"/>
+    <text x="445" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Dark Grey - Timing &amp; Analytics</text>
+    <line x1="630" y1="20" x2="675" y2="20" stroke="#98633F" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="690" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Gold Arrows - Main Flow</text>
+    <line x1="840" y1="20" x2="890" y2="20" stroke="#214D72" stroke-width="4" stroke-dasharray="6,6" marker-end="url(#arrowhead2)"/>
+    <text x="900" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Blue Arrow - Optimization Loop</text>
+  </g>
+</svg>

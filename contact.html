@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 
+        Edited 08.01.25 to make it for company.
+    -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Process - HighLevel Integrations</title>
+    <link rel="icon" type="image/png" href="ms.png">
+    <link rel="shortcut icon" type="image/png" href="ms.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Embedded Style for Contact Form - Assignment Requirement -->
+    <style>
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #98633F;
+            box-shadow: 0 0 0 3px rgba(152, 99, 63, 0.2);
+            outline: none;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #CBCBCB;
+            font-weight: 600;
+        }
+
+        .logo-title {
+            font-size: 0.9rem;
+            color: #98633F;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* Updated Footer Styles */
+        .footer-section {
+            background: rgba(64, 64, 64, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(203, 203, 203, 0.1);
+            padding: 30px 40px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Contact Grid - Side by Side */
+        .contact-grid-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .contact-person {
+            text-align: left;
+        }
+
+        .contact-person h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #98633F;
+            margin-bottom: 8px;
+        }
+
+        .contact-person .role {
+            font-size: 0.9rem;
+            color: #CBCBCB;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .contact-person .contact-details {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .contact-person a {
+            color: #CBCBCB;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-person a:hover {
+            color: #98633F;
+            text-decoration: underline;
+        }
+
+        /* Copyright Centered */
+        .footer-legal {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(203, 203, 203, 0.1);
+        }
+
+        .footer-legal p {
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* FOOTER OVERRIDE STYLES - Add this to your existing <style> section */
+
+        /* Override external CSS contact styles for footer */
+        .footer-section .contact-details {
+            display: block !important;
+            grid-template-columns: none !important;
+            gap: 0 !important;
+            background: none !important;
+            backdrop-filter: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .footer-section .contact-grid-footer {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 30px !important;
+            margin-bottom: 20px !important;
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .footer-section .contact-person {
+            text-align: left !important;
+            background: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .footer-section .contact-person .contact-details {
+            font-size: 0.9rem !important;
+            line-height: 1.4 !important;
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: block !important;
+        }
+
+        /* Ensure footer layout works properly */
+        .footer-section .footer-content {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 25px !important;
+        }
+
+        .footer-section .footer-legal {
+            text-align: center !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(203, 203, 203, 0.1) !important;
+            background: none !important;
+            margin: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            /* Mobile Footer */
+            .contact-grid-footer {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-person {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+    
+    <!-- Box Model Wrapper -->
+    <div class="wrapper">
+        <!-- Header with Navigation -->
+        <header class="header-container">
+            <div class="logo-section">
+                <img src="ms.png" alt="MS Logo" class="logo-image" width="60" height="60">
+                <div class="logo-text">
+                    <span class="logo-name">HighLevel</span>
+                    <span class="logo-title">Integrations</span>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Page Hero Section -->
+        <section class="contact-hero">
+            <div class="hero-content">
+                <h1>Ready to Transform Your Business?</h1>
+                <p>Let's discuss your project and see how we can help you succeed online</p>
+            </div>
+        </section>
+        
+        <!-- Main Contact Content - Single Column Layout -->
+        <main class="contact-main">
+            <!-- Contact Form and Process Section -->
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <section class="contact-form-section">
+                    <h2>Get In Touch</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours to discuss your project.</p>
+                    
+                    <!-- Form with mailto method as required -->
+                    <form action="mailto:mindysideris@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="business-type">Business Type</label>
+                            <select id="business-type" name="business-type">
+                                <option value="">Select your business type</option>
+                                <option value="realestate">Real Estate</option>
+                                <option value="retail">Retail</option>
+                                <option value="restaurant">Restaurant/Food Service</option>
+                                <option value="professional">Professional Services</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="technology">Technology</option>
+                                <option value="nonprofit">Non-Profit</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Services Needed (Check all that apply)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="web-development">
+                                    <span class="checkbox-text">Web Development</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="automation">
+                                    <span class="checkbox-text">Automation & Workflows</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="crm">
+                                    <span class="checkbox-text">CRM Setup & Management</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="design">
+                                    <span class="checkbox-text">Design & Branding</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="consultation">
+                                    <span class="checkbox-text">Digital Strategy Consultation</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="project-description">Project Description *</label>
+                            <textarea id="project-description" name="project-description" rows="5" 
+                                      placeholder="Tell me about your project goals, current challenges, and what you'd like to achieve..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select your budget range</option>
+                                <option value="under-5k">Under $500</option>
+                                <option value="5k-10k">$500 - $1000</option>
+                                <option value="10k-25k">$1000 - $2500</option>
+                                <option value="25k-plus">$2500+</option>
+                                <option value="discuss">Prefer to discuss</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timeline">Preferred Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="2-3-months">2-3 months</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </section>
+                
+                <!-- My Process Section -->
+                <section class="process-section">
+                    <h2>Our Process</h2>
+                    <p>Here's how we work with clients to ensure successful project outcomes:</p>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Discovery Call</h3>
+                                <p>We'll have a detailed conversation about your business goals, current challenges, and project requirements. This helps us understand exactly what you need.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Strategy & Planning</h3>
+                                <p>We'll create a comprehensive project plan with timelines, deliverables, and technical specifications tailored to your specific needs and budget.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Design & Development</h3>
+                                <p>We'll build your solution with regular check-ins and updates, ensuring everything meets your expectations before moving to the next phase.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Testing & Launch</h3>
+                                <p>Thorough testing across all devices and browsers, followed by a smooth launch with monitoring to ensure everything works perfectly.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h3>Ongoing Support</h3>
+                                <p>We provide training, documentation, and ongoing support to ensure you can manage your new systems and continue to grow your business.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Client Testimonials Table - Required by Assignment -->
+            <section class="testimonials-section">
+                <h2>Client Testimonials</h2>
+                <div class="table-container">
+                    <table class="testimonials-table">
+                        <thead>
+                            <tr>
+                                <th>Client Name</th>
+                                <th>Company</th>
+                                <th>Service</th>
+                                <th>Rating</th>
+                                <th>Testimonial</th>
+                                <th>Project Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sarah Johnson</td>
+                                <td>Sweet Dreams Bakery</td>
+                                <td>E-commerce Website + Automation</td>
+                                <td>⭐⭐⭐⭐⭐</td>
+                                <td>"Mindy transformed our business with a beautiful website and automation that saves us 10 hours per week!"</td>
+                                <td>March 2025</td>
+                            </tr>
+                            <tr>
+                                <td>Mike Rodriguez</td>
+                                <td>Rodriguez Consulting</td>
+                                <td>CRM Setup + Lead Generation</td>
+                                <td>⭐⭐⭐⭐⭐</td>
+                                <td>"Our lead conversion increased by 300% after Mindy set up our HighLevel CRM system."</td>
+                                <td>January 2025</td>
+                            </tr>
+                            <tr>
+                                <td>Lisa Chen</td>
+                                <td>Zen Wellness Spa</td>
+                                <td>Website + Booking System</td>
+                                <td>⭐⭐⭐⭐⭐</td>
+                                <td>"The automated booking system and beautiful website have completely streamlined our operations."</td>
+                                <td>February 2025</td>
+                            </tr>
+                            <tr>
+                                <td>David Thompson</td>
+                                <td>Tech Solutions Pro</td>
+                                <td>Brand Identity + Web Design</td>
+                                <td>⭐⭐⭐⭐⭐</td>
+                                <td>"Mindy created a brand identity that perfectly represents our company values and attracts our ideal clients."</td>
+                                <td>December 2024</td>
+                            </tr>
+                            <tr>
+                                <td>Amy Foster</td>
+                                <td>Foster Real Estate</td>
+                                <td>Automation + Direct Mail</td>
+                                <td>⭐⭐⭐⭐⭐</td>
+                                <td>"The automated follow-up system and direct mail campaigns generated 50 new leads in the first month!"</td>
+                                <td>April 2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Contact Information and Music Player Section -->
+            <section class="contact-info-section">
+                <h2>Additional Information</h2>
+                
+                <div class="contact-details">
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                        <!--    <h3>Email</h3>
+                            <p><a href="mailto:mindysideris@gmail.com">mindysideris@gmail.com</a></p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+19169323131">(916) 932-3131</a></p>
+                        </div>-->
+                        
+                        <div class="contact-item">
+                            <h3>Location</h3>
+                            <p>Jackson, California<br>Serving clients worldwide</p>
+                        </div>
+                        <br>
+                        <div class="contact-item">
+                            <h3>Business Hours</h3>
+                            <p>M - F : 9:00 AM - 6:00 PM PST<br>
+                               Weekend : By appointment only</p>
+                        </div>
+                    </div>
+                        
+                        <!-- Image attribution for non-original content -->
+                        <div class="attribution" style="margin-top: 20px; padding: 15px; background: rgba(64, 64, 64, 0.3); border-radius: 8px; font-size: 0.8rem;">
+                            <h4>Image Credits:</h4>
+                            <p>All client work examples represent actual projects completed by Mindy Sideris.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer-section">
+            <div class="footer-content">
+                <!-- Contact Grid - Side by Side -->
+                <div class="contact-grid-footer">
+                    <!-- Mindy on the Left -->
+                    <div class="contact-person">
+                        <h4>Mindy Sideris</h4>
+                        <div class="role">Full-Stack & CRM Developer | Creative Technologist</div>
+                        <div class="contact-details">
+                            <a href="mailto:mindysideris@gmail.com" style="color: #CBCBCB; text-decoration: none;">mindysideris@gmail.com</a><br>
+                            (916) 932-3131
+                        </div>
+                    </div>
+                    
+                    <!-- Guillermo on the Right -->
+                    <div class="contact-person">
+                        <h4>Guillermo Serafin</h4>
+                        <div class="role">Consultant</div>
+                        <div class="contact-details">
+                            <a href="mailto:info@thecultyourcompany.com" style="color: #CBCBCB; text-decoration: none;">info@thecultyourcompany.com</a><br>
+                            (279) 900-6256
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Copyright Centered at Bottom -->
+                <div class="footer-legal">
+                    <p style="color: #98633F;">&copy; 2025 HighLevel Integrations. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- JavaScript for Form Validation and Parallax -->
+    <script>
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-bg');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+        
+        // Form validation and enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form');
+            const submitBtn = document.querySelector('.submit-btn');
+            
+            // Add form submission handling
+            form.addEventListener('submit', function(e) {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const description = document.getElementById('project-description').value;
+                
+                if (!name || !email || !description) {
+                    e.preventDefault();
+                    alert('Please fill in all required fields (marked with *)');
+                    return false;
+                }
+                
+                // Change button text on submit
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Note: In a real implementation, you'd handle the form submission differently
+                // The mailto: method is used here to meet assignment requirements
+            });
+            
+            // Add checkbox validation
+            const checkboxes = document.querySelectorAll('input[name="services"]');
+            const servicesGroup = document.querySelector('.checkbox-group');
+            
+            function validateServices() {
+                const checkedBoxes = document.querySelectorAll('input[name="services"]:checked');
+                if (checkedBoxes.length === 0) {
+                    servicesGroup.style.borderColor = '#ff6b6b';
+                } else {
+                    servicesGroup.style.borderColor = 'transparent';
+                }
+            }
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', validateServices);
+            });
+        });
+        
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

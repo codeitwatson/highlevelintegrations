@@ -1,0 +1,159 @@
+<svg viewBox="0 0 1200 850" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <dropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000508" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#98633F"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#214D72"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="850" fill="#000508"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="#98633F" font-family="serif" font-size="30" font-weight="bold">
+    Real Estate Brokerage Performance Analytics Automation
+  </text>
+  
+  <!-- BOXES -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Contract Input Portal</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Closed Contract Data</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Sold Price Entry</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Commission Details</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Concessions Tracking</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Vendor Information</text>
+  </g>
+  
+  <g transform="translate(330, 80)">
+    <rect x="0" y="0" width="180" height="120" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="90" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Data Processing</text>
+    <text x="90" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Spreadsheet Storage</text>
+    <text x="90" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Monthly Organization</text>
+    <text x="90" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Yearly Categorization</text>
+    <text x="90" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Agent-Based Sorting</text>
+    <text x="90" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Historical Archive</text>
+  </g>
+  
+  <g transform="translate(590, 80)">
+    <rect x="0" y="0" width="240" height="140" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="120" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Report Generation</text>
+    <text x="120" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• One-Click Access</text>
+    <text x="120" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Transaction Volume Reports</text>
+    <text x="120" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Commission Analytics</text>
+    <text x="120" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Agent Performance Data</text>
+    <text x="120" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Brokerage Summaries</text>
+    <text x="120" y="125" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">Monthly/YTD/All-Time</text>
+  </g>
+  
+  <g transform="translate(910, 80)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Report Delivery</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Instant Email Delivery</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Custom Recipients</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Formatted Reports</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Portal Dashboard</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Real-Time Access</text>
+  </g>
+  
+  <g transform="translate(330, 300)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#404040" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Monthly Automation</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Auto-Generated Reports</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Beginning of Month</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Previous Month Data</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Designated Recipients</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Team Notifications</text>
+    <text x="100" y="125" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Scheduled Delivery</text>
+  </g>
+  
+  <g transform="translate(590, 300)">
+    <rect x="0" y="0" width="240" height="140" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="120" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Data Analytics</text>
+    <text x="120" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Historical Tracking</text>
+    <text x="120" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Performance Metrics</text>
+    <text x="120" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Comparative Analysis</text>
+    <text x="120" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Trend Identification</text>
+    <text x="120" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Strategic Insights</text>
+    <text x="120" y="125" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">Business Intelligence</text>
+  </g>
+  
+  <!-- Main Flow Arrows -->
+  <path d="M 260 140 L 320 140" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 520 150 L 580 150" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 840 150 L 900 150" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 420 210 L 420 290" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 540 370 L 580 370" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 710 230 L 710 290" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Blue Feedback Loop -->
+  <path
+    d="M 1130 140 Q 1180 200 1180 300 Q 1180 370 1120 370 L 850 370"
+    stroke="#214D72"
+    stroke-width="4"
+    fill="none"
+    stroke-dasharray="6,6"
+    marker-end="url(#arrowhead2)"
+  />
+  <text x="930" y="320" fill="#214D72" font-family="sans-serif" font-size="14" font-weight="bold" font-style="italic">
+    Continuous
+  </text>
+  <text x="950" y="335" fill="#214D72" font-family="sans-serif" font-size="14" font-weight="bold" font-style="italic">
+    Tracking
+  </text>
+  
+  <!-- Key Business Benefits -->
+  <g transform="translate(50, 530)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(33, 77, 114, 0.2)" stroke="#98633F" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="18" font-weight="bold">Key Business Benefits</text>
+    <text x="150" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Instant Data Access</text>
+    <text x="150" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">One-Click Reports</text>
+    <text x="350" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Zero Manual Reporting</text>
+    <text x="350" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Complete Automation</text>
+    <text x="550" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Complete Transaction History</text>
+    <text x="550" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Comprehensive Archives</text>
+    <text x="750" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Automated Monthly Reports</text>
+    <text x="750" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Proactive Delivery</text>
+    <text x="950" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Performance Tracking</text>
+    <text x="950" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Strategic Insights</text>
+  </g>
+  
+  <!-- Technology Integration -->
+  <g transform="translate(50, 650)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(152, 99, 63, 0.2)" stroke="#214D72" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#214D72" font-family="sans-serif" font-size="18" font-weight="bold">Technology Integration</text>
+    <text x="90" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">CRM Platform</text>
+    <text x="90" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Custom Input Portal</text>
+    <text x="245" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Spreadsheet Database</text>
+    <text x="245" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Data Storage</text>
+    <text x="405" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Email Automation</text>
+    <text x="405" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Report Delivery</text>
+    <text x="560" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Report Generation</text>
+    <text x="560" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Analytics Engine</text>
+    <text x="725" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Monthly Scheduling</text>
+    <text x="725" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Automated Delivery</text>
+    <text x="865" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Broker Portal</text>
+    <text x="865" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Dashboard Access</text>
+    <text x="1000" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Data Analytics</text>
+    <text x="1000" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Performance Metrics</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(150, 750)">
+    <circle cx="20" cy="20" r="8" fill="#98633F"/>
+    <text x="35" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Gold - Reports &amp; Analytics</text>
+    <circle cx="200" cy="20" r="8" fill="#214D72"/>
+    <text x="215" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Blue - Data Processing</text>
+    <circle cx="350" cy="20" r="8" fill="#404040"/>
+    <text x="365" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Dark Grey - Automation</text>
+    <line x1="510" y1="20" x2="560" y2="20" stroke="#98633F" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="570" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Gold Arrows - Main Flow</text>
+    <line x1="730" y1="20" x2="780" y2="20" stroke="#214D72" stroke-width="4" stroke-dasharray="6,6" marker-end="url(#arrowhead2)"/>
+    <text x="790" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Blue Arrow - Continuous Tracking</text>
+  </g>
+</svg>

@@ -1,0 +1,175 @@
+<svg viewBox="0 0 1200 850" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <dropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000508" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#98633F"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#214D72"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="850" fill="#000508"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="#98633F" font-family="serif" font-size="30" font-weight="bold">
+    Multi-Source Lead Management Automation
+  </text>
+  
+  <!-- BOXES -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">External Lead Sources</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Bigger Pockets</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Zillow</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Facebook Ads</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Google Ads</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Lead Generation Sites</text>
+    <text x="100" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Any Platform</text>
+  </g>
+  
+  <g transform="translate(320, 80)">
+    <rect x="0" y="0" width="180" height="120" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="90" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Lead Processing</text>
+    <text x="90" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Data Parsing</text>
+    <text x="90" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Information Extraction</text>
+    <text x="90" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Lead Validation</text>
+    <text x="90" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Data Standardization</text>
+    <text x="90" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Source Attribution</text>
+  </g>
+  
+  <g transform="translate(570, 80)">
+    <rect x="0" y="0" width="220" height="140" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="110" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">CRM Integration</text>
+    <text x="110" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Automatic Lead Creation</text>
+    <text x="110" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Pipeline Placement</text>
+    <text x="110" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• "Untouched" Status</text>
+    <text x="110" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Opportunity Creation</text>
+    <text x="110" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Contact Information</text>
+    <text x="110" y="125" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">Lead Classification</text>
+  </g>
+  
+  <g transform="translate(860, 80)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">User Notification</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Instant Email Alert</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• SMS Notification</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Lead Details</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Source Information</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Action Required</text>
+  </g>
+  
+  <g transform="translate(200, 300)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Lead Thank You</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Automatic Response</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Personalized Message</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Email or SMS</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Next Steps Info</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Professional Response</text>
+    <text x="100" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Optional Feature</text>
+  </g>
+  
+  <g transform="translate(450, 300)">
+    <rect x="0" y="0" width="220" height="140" rx="10" fill="#404040" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="110" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Pipeline Management</text>
+    <text x="110" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Custom Stage Creation</text>
+    <text x="110" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Lead Progression Tracking</text>
+    <text x="110" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Status Updates</text>
+    <text x="110" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Conversion Monitoring</text>
+    <text x="110" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Performance Analytics</text>
+    <text x="110" y="125" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">Lead Journey Tracking</text>
+  </g>
+  
+  <g transform="translate(720, 300)">
+    <rect x="0" y="0" width="240" height="140" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="120" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Lead Nurturing Sequences</text>
+    <text x="120" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Automated Email Campaigns</text>
+    <text x="120" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Customized Messaging</text>
+    <text x="120" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Periodic Scheduling</text>
+    <text x="120" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Value-Based Content</text>
+    <text x="120" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Market Updates</text>
+    <text x="120" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Long-term Engagement</text>
+  </g>
+  
+  <!-- Main Flow Arrows -->
+  <path d="M 260 150 L 310 150" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 510 150 L 560 150" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 800 150 L 850 150" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrows to supporting processes -->
+  <path d="M 300 230 L 300 290" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 560 230 L 560 290" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 840 230 L 840 290" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Blue Feedback Loop -->
+  <path
+    d="M 1080 150 Q 1130 200 1130 320 Q 1130 390 1070 390 L 980 390"
+    stroke="#214D72"
+    stroke-width="4"
+    fill="none"
+    stroke-dasharray="6,6"
+    marker-end="url(#arrowhead2)"
+  />
+  <text x="990" y="340" fill="#214D72" font-family="sans-serif" font-size="14" font-weight="bold" font-style="italic">
+    Continuous
+  </text>
+  <text x="1010" y="355" fill="#214D72" font-family="sans-serif" font-size="14" font-weight="bold" font-style="italic">
+    Nurturing
+  </text>
+  
+  <!-- Key Business Benefits -->
+  <g transform="translate(50, 530)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(33, 77, 114, 0.2)" stroke="#98633F" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="18" font-weight="bold">Key Business Benefits</text>
+    <text x="150" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Universal Integration</text>
+    <text x="150" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Any Lead Source</text>
+    <text x="350" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Instant Response</text>
+    <text x="350" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Zero Delay</text>
+    <text x="550" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Complete Automation</text>
+    <text x="550" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">No Manual Entry</text>
+    <text x="750" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Lead Nurturing</text>
+    <text x="750" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Long-term Value</text>
+    <text x="950" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Pipeline Visibility</text>
+    <text x="950" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Clear Tracking</text>
+  </g>
+  
+  <!-- Technology Integration -->
+  <g transform="translate(50, 650)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(152, 99, 63, 0.2)" stroke="#214D72" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#214D72" font-family="sans-serif" font-size="18" font-weight="bold">Technology Integration</text>
+    <text x="70" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">API Connections</text>
+    <text x="70" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Multi-Platform</text>
+    <text x="190" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Data Parser</text>
+    <text x="190" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Smart Processing</text>
+    <text x="315" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">CRM Platform</text>
+    <text x="315" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Lead Management</text>
+    <text x="460" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Notification Engine</text>
+    <text x="460" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Multi-Channel</text>
+    <text x="615" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Email Automation</text>
+    <text x="615" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Nurture Sequences</text>
+    <text x="750" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Pipeline Builder</text>
+    <text x="750" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Custom Stages</text>
+    <text x="890" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Analytics Dashboard</text>
+    <text x="890" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Performance Tracking</text>
+    <text x="1030" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">SMS Integration</text>
+    <text x="1030" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Instant Alerts</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(30, 750)">
+    <circle cx="0" cy="20" r="8" fill="#98633F"/>
+    <text x="15" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Gold - Communications &amp; Nurturing</text>
+    <circle cx="235" cy="20" r="8" fill="#214D72"/>
+    <text x="250" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Blue - Processing &amp; Integration</text>
+    <circle cx="445" cy="20" r="8" fill="#404040"/>
+    <text x="460" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Dark Grey - Pipeline Management</text>
+    <line x1="665" y1="20" x2="720" y2="20" stroke="#98633F" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="730" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Gold Arrows - Main Flow</text>
+    <line x1="885" y1="20" x2="940" y2="20" stroke="#214D72" stroke-width="4" stroke-dasharray="6,6" marker-end="url(#arrowhead2)"/>
+    <text x="950" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Blue Arrow - Continuous Nurturing</text>
+  </g>
+</svg>

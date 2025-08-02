@@ -1,0 +1,573 @@
+/* 
+CISW327 Final Project - Portfolio Styles
+Student: Mindy S.
+Date: July 2025
+Three Column Portfolio Layout
+*/
+
+/* UTF-8 Character Set Declaration */
+@charset "UTF-8";
+
+/* Page Hero Section */
+.page-hero {
+    padding: 60px 40px 40px;
+    text-align: center;
+    background: rgba(33, 77, 114, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(203, 203, 203, 0.1);
+}
+
+.page-hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #CBCBCB;
+    margin-bottom: 16px;
+}
+
+.page-hero-content p {
+    font-size: 1.2rem;
+    color: #98633F;
+    margin-bottom: 0;
+}
+
+/* Filter Navigation */
+.filter-nav {
+    padding: 30px 40px;
+    text-align: center;
+    background: rgba(0, 5, 8, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    background: rgba(33, 77, 114, 0.2);
+    border: 2px solid rgba(203, 203, 203, 0.2);
+    border-radius: 25px;
+    color: #CBCBCB;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: rgba(152, 99, 63, 0.3);
+    border-color: #98633F;
+    color: #98633F;
+    transform: translateY(-2px);
+}
+
+/* Portfolio Main Layout */
+.portfolio-main {
+    padding: 40px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Keep the same width but adjust padding when filtered */
+.portfolio-main.filtered {
+    padding: 40px 20px;
+}
+
+/* THREE COLUMN GRID LAYOUT */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* When filtered to single category, make it span all columns */
+.portfolio-grid.filtered {
+    display: block;
+}
+
+/* Individual Portfolio Columns */
+.portfolio-column {
+    background: rgba(33, 77, 114, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(203, 203, 203, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+/* Make the portfolio column expand to full width when filtered */
+.portfolio-grid.filtered .portfolio-column {
+    width: 100%;
+    max-width: none;
+}
+
+.portfolio-column:hover {
+    transform: translateY(-5px);
+    background: rgba(33, 77, 114, 0.15);
+    border-color: rgba(152, 99, 63, 0.3);
+}
+
+/* Column Headers */
+.column-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(152, 99, 63, 0.3);
+}
+
+.column-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #98633F;
+    margin-bottom: 10px;
+}
+
+.column-header p {
+    font-size: 0.95rem;
+    color: #CBCBCB;
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Portfolio Items Container */
+.portfolio-items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* When filtered to single category, keep items in single column but full width */
+.portfolio-grid.filtered .portfolio-items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Make individual portfolio items full width when filtered */
+.portfolio-grid.filtered .portfolio-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 3px solid rgba(152, 99, 63, 0.4);
+    box-shadow: 0 4px 15px rgba(152, 99, 63, 0.2);
+}
+
+.portfolio-grid.filtered .portfolio-item:hover {
+    border-color: rgba(152, 99, 63, 0.6);
+    box-shadow: 0 6px 20px rgba(152, 99, 63, 0.3);
+}
+
+/* Swap order: content first, then image */
+.portfolio-grid.filtered .item-content {
+    order: 1;
+    padding: 25px;
+}
+
+.portfolio-grid.filtered .portfolio-item img {
+    order: 2;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Make headings larger for filtered view */
+.portfolio-grid.filtered .item-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #98633F;
+    line-height: 1.3;
+}
+
+/* Adjust column header for filtered view */
+.portfolio-grid.filtered .column-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.portfolio-grid.filtered .column-header h2 {
+    font-size: 2.2rem;
+}
+
+/* Individual Portfolio Items */
+.portfolio-item {
+    background: rgba(0, 5, 8, 0.3);
+    border: 2px solid rgba(152, 99, 63, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(152, 99, 63, 0.1);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(152, 99, 63, 0.2);
+    border-color: rgba(152, 99, 63, 0.5);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Item Content */
+.item-content {
+    padding: 20px;
+}
+
+.item-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #CBCBCB;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.item-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* Tags */
+.item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: rgba(152, 99, 63, 0.2);
+    color: #98633F;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(152, 99, 63, 0.3);
+}
+
+/* Featured Case Study Section */
+.featured-case-study {
+    margin: 60px 40px;
+    background: rgba(33, 77, 114, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(203, 203, 203, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.case-study-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #98633F;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(152, 99, 63, 0.3);
+    padding-bottom: 15px;
+}
+
+/* Case Study Grid */
+.case-study-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Case Study Text Content */
+.case-study-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #CBCBCB;
+    margin-bottom: 12px;
+    margin-top: 25px;
+}
+
+.case-study-text h3:first-child {
+    margin-top: 0;
+}
+
+.case-study-text p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.case-study-text ul {
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.case-study-text li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Results Stats */
+.results-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(0, 5, 8, 0.3);
+    border-radius: 15px;
+    border: 1px solid rgba(152, 99, 63, 0.2);
+}
+
+.result-item {
+    text-align: center;
+}
+
+.result-number {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #98633F;
+    line-height: 1.2;
+}
+
+.result-label {
+    font-size: 0.9rem;
+    color: #CBCBCB;
+    opacity: 0.9;
+}
+
+/* Blockquote in Case Study */
+.case-study-text blockquote {
+    background: rgba(152, 99, 63, 0.1);
+    border-left: 4px solid #98633F;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+.case-study-text blockquote p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.case-study-text cite {
+    font-size: 0.9rem;
+    color: #98633F;
+    font-weight: 500;
+}
+
+/* Case Study Video Section */
+.case-study-video {
+    text-align: center;
+}
+
+.case-study-video h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #CBCBCB;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    background: rgba(0, 5, 8, 0.5);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(203, 203, 203, 0.1);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 225px;
+    border-radius: 10px;
+}
+
+.case-study-video p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Responsive Design for Portfolio */
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+    
+    /* Filtered view uses block layout */
+    .portfolio-grid.filtered {
+        display: block;
+    }
+    
+    .portfolio-main {
+        padding: 30px;
+    }
+    
+    .portfolio-main.filtered {
+        padding: 30px 20px;
+    }
+    
+    .case-study-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .results-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Adjust filtered headings for tablets */
+    .portfolio-grid.filtered .item-content h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Filtered view uses block layout */
+    .portfolio-grid.filtered {
+        display: block;
+    }
+    
+    .portfolio-main {
+        padding: 20px;
+    }
+    
+    .portfolio-main.filtered {
+        padding: 20px 15px;
+    }
+    
+    .filter-nav {
+        padding: 20px;
+    }
+    
+    .filter-buttons {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .page-hero {
+        padding: 40px 20px 30px;
+    }
+    
+    .page-hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .featured-case-study {
+        margin: 40px 20px;
+        padding: 25px;
+    }
+    
+    .column-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .item-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .video-container iframe {
+        height: 200px;
+    }
+    
+    /* Adjust filtered items for mobile */
+    .portfolio-grid.filtered .item-content {
+        padding: 20px;
+    }
+    
+    .portfolio-grid.filtered .item-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .portfolio-grid.filtered .column-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-tags {
+        justify-content: center;
+    }
+    
+    .tag {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+    
+    .result-number {
+        font-size: 1.5rem;
+    }
+    
+    .result-label {
+        font-size: 0.8rem;
+    }
+    
+    .portfolio-main.filtered {
+        padding: 20px 10px;
+    }
+    
+    /* Adjust content padding and headings on very small screens */
+    .portfolio-grid.filtered .item-content {
+        padding: 15px;
+    }
+    
+    .portfolio-grid.filtered .item-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .portfolio-grid.filtered .column-header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-tags {
+        justify-content: center;
+    }
+    
+    .tag {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+    
+    .result-number {
+        font-size: 1.5rem;
+    }
+    
+    .result-label {
+        font-size: 0.8rem;
+    }
+    
+    /* Ensure portfolio items use full width on very small screens */
+    .portfolio-column:only-child .portfolio-items {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .portfolio-column:only-child .column-header h2 {
+        font-size: 1.6rem;
+    }
+}

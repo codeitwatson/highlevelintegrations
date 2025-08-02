@@ -1,0 +1,196 @@
+<svg viewBox="0 0 1200 850" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <dropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000508" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#98633F"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#214D72"/>
+    </marker>
+    <marker id="arrowhead3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrowhead4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C62828"/>
+    </marker>
+    <marker id="arrowhead5" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#FF9800"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="850" fill="#000508"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" fill="#98633F" font-family="serif" font-size="30" font-weight="bold">
+    Database Reactivation Automation
+  </text>
+  
+  <!-- BOXES -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Inactivity Detection</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• No Website Visits</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• No Email Response</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Engagement Drop</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Activity Monitoring</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Lead Identification</text>
+    <text x="100" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Trigger Conditions</text>
+  </g>
+  
+  <g transform="translate(320, 100)">
+    <rect x="0" y="0" width="180" height="120" rx="10" fill="#404040" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="90" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Wait Period</text>
+    <text x="90" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Designated Days</text>
+    <text x="90" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Custom Timing</text>
+    <text x="90" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Scheduled Delay</text>
+    <text x="90" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Timing Control</text>
+    <text x="90" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Activity Grace Period</text>
+  </g>
+  
+  <g transform="translate(570, 100)">
+    <rect x="0" y="0" width="220" height="140" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="110" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Reactivation Outreach</text>
+    <text x="110" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Personalized Emails</text>
+    <text x="110" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Value-Based Content</text>
+    <text x="110" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• New Offers &amp; Incentives</text>
+    <text x="110" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Varied Messaging</text>
+    <text x="110" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Reengagement Campaign</text>
+    <text x="110" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Periodic Attempts</text>
+  </g>
+  
+  <g transform="translate(860, 100)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Engagement Check</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Response Monitoring</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Click Tracking</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Website Activity</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Unsubscribe Detection</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Engagement Analysis</text>
+  </g>
+  
+  <!-- Active Nurturing Pipeline -->
+  <g transform="translate(200, 340)">
+    <rect x="0" y="0" width="220" height="140" rx="10" fill="#2E7D32" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="110" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Active Nurturing Pipeline</text>
+    <text x="110" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Reengaged Leads</text>
+    <text x="110" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Tailored Content</text>
+    <text x="110" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Sales Pipeline Entry</text>
+    <text x="110" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Conversion Focus</text>
+    <text x="110" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Win Opportunity</text>
+    <text x="110" y="125" text-anchor="middle" fill="#4CAF50" font-family="sans-serif" font-size="11" font-weight="bold">Success Path</text>
+  </g>
+  
+  <!-- DND Pipeline -->
+  <g transform="translate(480, 340)">
+    <rect x="0" y="0" width="240" height="140" rx="10" fill="#C62828" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="120" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Do Not Disturb Pipeline</text>
+    <text x="120" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Unsubscribed Leads</text>
+    <text x="120" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• No Further Contact</text>
+    <text x="120" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Compliance Protection</text>
+    <text x="120" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• List Suppression</text>
+    <text x="120" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Legal Compliance</text>
+    <text x="120" y="125" text-anchor="middle" fill="#FF5722" font-family="sans-serif" font-size="11" font-weight="bold">Exit Strategy</text>
+  </g>
+  
+  <!-- Content Management -->
+  <g transform="translate(780, 340)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#404040" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Content Management</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Message Variation</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• A/B Testing</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Performance Tracking</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Content Optimization</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Campaign Analytics</text>
+    <text x="100" y="125" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">Strategy Refinement</text>
+  </g>
+  
+  <!-- Main Flow Arrows -->
+  <path d="M 260 170 L 310 170" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 510 170 L 560 170" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 800 170 L 850 170" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Branching Arrows -->
+  <path d="M 900 230 L 430 330" stroke="#2E7D32" stroke-width="4" fill="none" marker-end="url(#arrowhead3)"/>
+  <text x="450" y="290" fill="#2E7D32" font-family="sans-serif" font-size="12" font-weight="bold">Lead Reengages</text>
+  
+  <path d="M 900 230 L 720 330" stroke="#C62828" stroke-width="4" fill="none" marker-end="url(#arrowhead4)"/>
+  <text x="825" y="290" fill="#C62828" font-family="sans-serif" font-size="12" font-weight="bold">Unsubscribes</text>
+  
+  <!-- Supporting Arrows -->
+  <path d="M 950 230 L 950 330" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Reactivation Loop Arrow -->
+  <path
+    d="M 1010 230 Q 1110 280 1110 170 Q 1110 80 1060 80 L 800 120"
+    stroke="#FF9800"
+    stroke-width="4"
+    fill="none"
+    stroke-dasharray="6,6"
+    marker-end="url(#arrowhead5)"
+  />
+  <text x="990" y="290" fill="#FF9800" font-family="sans-serif" font-size="12" font-weight="bold" font-style="italic">
+    No Response -
+  </text>
+  <text x="1010" y="305" fill="#FF9800" font-family="sans-serif" font-size="12" font-weight="bold" font-style="italic">
+    Continue Loop
+  </text>
+  
+  <!-- Key Business Benefits -->
+  <g transform="translate(50, 530)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(33, 77, 114, 0.2)" stroke="#98633F" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="18" font-weight="bold">Key Business Benefits</text>
+    <text x="150" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Database Revival</text>
+    <text x="150" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Inactive Lead Recovery</text>
+    <text x="350" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Intelligent Timing</text>
+    <text x="350" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Strategic Reactivation</text>
+    <text x="550" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Complete Automation</text>
+    <text x="550" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Set &amp; Forget</text>
+    <text x="750" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Compliance Protection</text>
+    <text x="750" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">DND Management</text>
+    <text x="950" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Revenue Recovery</text>
+    <text x="950" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Lost Lead Conversion</text>
+  </g>
+  
+  <!-- Technology Integration -->
+  <g transform="translate(50, 650)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(152, 99, 63, 0.2)" stroke="#214D72" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#214D72" font-family="sans-serif" font-size="18" font-weight="bold">Technology Integration</text>
+    <text x="85" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Activity Tracking</text>
+    <text x="85" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Behavior Monitoring</text>
+    <text x="215" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Email Automation</text>
+    <text x="215" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Campaign Management</text>
+    <text x="345" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">CRM Platform</text>
+    <text x="345" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Pipeline Management</text>
+    <text x="475" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Timing Engine</text>
+    <text x="475" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Scheduled Automation</text>
+    <text x="605" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Content Library</text>
+    <text x="605" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Message Templates</text>
+    <text x="735" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Analytics Dashboard</text>
+    <text x="735" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Performance Tracking</text>
+    <text x="875" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Compliance Tools</text>
+    <text x="875" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Unsubscribe Management</text>
+    <text x="1015" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">A/B Testing</text>
+    <text x="1015" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Content Optimization</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(25, 750)">
+    <circle cx="60" cy="20" r="8" fill="#98633F"/>
+    <text x="75" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Gold - Outreach</text>
+    <circle cx="195" cy="20" r="8" fill="#214D72"/>
+    <text x="210" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Blue - Processing</text>
+    <circle cx="330" cy="20" r="8" fill="#404040"/>
+    <text x="345" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Dark Grey - Management</text>
+    <circle cx="505" cy="20" r="8" fill="#2E7D32"/>
+    <text x="520" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Green - Reengagement</text>
+    <circle cx="670" cy="20" r="8" fill="#C62828"/>
+    <text x="685" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Red - Unsubscribe</text>
+    <circle cx="805" cy="20" r="8" fill="#FF9800"/>
+    <text x="820" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Orange - Reactivation Loop</text>
+    <line x1="980" y1="20" x2="1040" y2="20" stroke="#98633F" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="1050" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Main Flow</text>
+  </g>
+</svg>

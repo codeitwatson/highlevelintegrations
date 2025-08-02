@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 
+        Edited 08.01.25 to make it for company.
+    -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio &amp; Services - HighLevel Integrations</title>
+    <link rel="icon" type="image/png" href="ms.png">
+    <link rel="shortcut icon" type="image/png" href="ms.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portfolio-styles.css">
+    <style>
+        /* Additional styles for carousel functionality */
+        .carousel-container {
+            position: relative;
+            margin-top: 15px;
+            width: 100%;
+            background: rgba(0, 5, 8, 0.3);
+            border-radius: 8px;
+            padding: 15px 40px;
+            border: 1px solid rgba(152, 99, 63, 0.2);
+            overflow: hidden;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease;
+            gap: 8px;
+            width: max-content;
+        }
+        
+        .carousel-item {
+            flex: 0 0 auto;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(152, 99, 63, 0.8);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .carousel-nav:hover {
+            background: rgba(152, 99, 63, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-prev {
+            left: 5px;
+        }
+        
+        .carousel-next {
+            right: 5px;
+        }
+        
+        .carousel-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            background: rgba(152, 99, 63, 0.4);
+        }
+        
+        .carousel-nav:disabled:hover {
+            transform: translateY(-50%) scale(1);
+            background: rgba(152, 99, 63, 0.4);
+        }
+        
+        /* Ensure equal column widths */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            align-items: stretch; /* This makes all columns equal height */
+            width: 100%;
+        }
+        
+        .portfolio-column {
+            width: 100%;
+            min-width: 0; /* Prevents flex overflow */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .portfolio-items {
+            flex: 1; /* This makes the items container expand to fill available space */
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        /* Add a "spacer" element to fill remaining space */
+        .column-spacer {
+            flex: 1;
+            min-height: 20px;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        
+        .coming-soon-card {
+            background: rgba(33, 77, 114, 0.05);
+            border: 2px dashed rgba(152, 99, 63, 0.3);
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .coming-soon-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: rgba(152, 99, 63, 0.7);
+            margin-bottom: 10px;
+        }
+        
+        .coming-soon-card p {
+            color: rgba(203, 203, 203, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .coming-soon-icon {
+            font-size: 2rem;
+            color: rgba(152, 99, 63, 0.4);
+            margin-bottom: 15px;
+        }
+        
+        /* Video containers to be responsive when filtered */
+        .video-container {
+            position: relative;
+            width: 280px;
+            height: 160px;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        /* YouTube iframe styling */
+        .youtube-embed {
+            width: 280px;
+            height: 160px;
+            border-radius: 8px;
+            border: 2px solid rgba(152, 99, 63, 0.3);
+        }
+        
+        /* Video containers responsive when filtered */
+        .portfolio-grid.filtered .video-container {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            order: 2;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .portfolio-grid.filtered .video-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .portfolio-grid.filtered .youtube-embed {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+        }
+        
+        /* Fix for percentage width images */
+        .stats-image {
+            width: 100%;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 2px solid rgba(152, 99, 63, 0.3);
+            max-height: 200px;
+            object-fit: contain;
+        }
+        
+        .stats-grid-image {
+            width: 100%;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 2px solid rgba(152, 99, 63, 0.3);
+        }
+
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #CBCBCB;
+            font-weight: 600;
+        }
+
+        .logo-title {
+            font-size: 0.9rem;
+            color: #98633F;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* Updated Footer Styles */
+        .footer-section {
+            background: rgba(64, 64, 64, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(203, 203, 203, 0.1);
+            padding: 30px 40px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Contact Grid - Side by Side */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .contact-person {
+            text-align: left;
+        }
+
+        .contact-person h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #98633F;
+            margin-bottom: 8px;
+        }
+
+        .contact-person .role {
+            font-size: 0.9rem;
+            color: #CBCBCB;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .contact-person .contact-details {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .contact-person a {
+            color: #CBCBCB;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-person a:hover {
+            color: #98633F;
+            text-decoration: underline;
+        }
+
+        /* Copyright Centered */
+        .footer-legal {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(203, 203, 203, 0.1);
+        }
+
+        .footer-legal p {
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* FOOTER OVERRIDE STYLES - Add this to your existing <style> section */
+
+        /* Override external CSS contact styles for footer */
+        .footer-section .contact-details {
+            display: block !important;
+            grid-template-columns: none !important;
+            gap: 0 !important;
+            background: none !important;
+            backdrop-filter: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .footer-section .contact-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 30px !important;
+            margin-bottom: 20px !important;
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .footer-section .contact-person {
+            text-align: left !important;
+            background: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .footer-section .contact-person .contact-details {
+            font-size: 0.9rem !important;
+            line-height: 1.4 !important;
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: block !important;
+        }
+
+        /* Ensure footer layout works properly */
+        .footer-section .footer-content {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 25px !important;
+        }
+
+        .footer-section .footer-legal {
+            text-align: center !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(203, 203, 203, 0.1) !important;
+            background: none !important;
+            margin: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            /* Mobile Footer */
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-person {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+    
+    <!-- Box Model Wrapper -->
+    <div class="wrapper">
+        <!-- Header with Navigation -->
+        <header class="header-container">
+            <div class="logo-section">
+                <img src="ms.png" alt="MS Logo" class="logo-image" width="60" height="60">
+                <div class="logo-text">
+                    <span class="logo-name">HighLevel</span>
+                    <span class="logo-title">Integrations</span>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Page Title Section -->
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <h1>Our Portfolio & Services</h1>
+                <p>Explore our work across web development, automation, and design</p>
+            </div>
+        </section>
+        
+        <!-- Filter Navigation -->
+        <div class="filter-nav">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+        </div>
+        
+        <!-- 3-Column Portfolio Layout -->
+        <main class="portfolio-main">
+            <div class="portfolio-grid">
+                <!-- Column 1: Web Development -->
+                <div class="portfolio-column" data-category="web">
+                    <div class="column-header">
+                        <h2>Web Development</h2>
+                        <p>Custom websites that blend beauty with functionality</p>
+                    </div>
+                    
+                    <div class="portfolio-items">
+                        <div class="portfolio-item">
+                            <a href="https://new.servefirstrealty.com" target="_blank" rel="noopener">
+                                <img src="servefirstimg.png" 
+                                    alt="California Real Estate Brokerage Website Image" 
+                                    width="280" 
+                                    height="160">
+                            </a>        
+                            <div class="item-content">
+                                <h3>California Real Estate Brokerage</h3>
+                                <p>Custom website with interactive county map, integrated MLS search, featured listings, agent profile pages, market insights and reports, lead-capturing CRM forms, and rich interactive resources for buyers and sellers.</p>
+                                <div class="item-tags">
+                                    <span class="tag">Custom HTML5</span>
+                                    <span class="tag">Custom CSS3</span>
+                                    <span class="tag">Custom JavaScript</span>
+                                    <span class="tag">Full ADA Compliance</span>
+                                    <span class="tag">Integrated Live MLS Feed</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <a href="https://380monumentparkway.info" target="_blank" rel="noopener">
+                                <img src="singlepropimg.png" 
+                                    alt="Single Property Website Image" 
+                                    width="280" 
+                                    height="160">
+                            </a>        
+                            <div class="item-content">
+                                <h3>Single Property Website</h3>
+                                <p>Interactive website featuring a full-screen slideshow, photo gallery, immersive 3D home tour, detailed floor plans, an interactive Google map with nearby amenities, and built-in calendar integration for seamless showing requests.</p>
+                                <div class="item-tags">
+                                    <span class="tag">API Integrations</span>
+                                    <span class="tag">iFrame with Interactive Elements</span>
+                                    <span class="tag">Google Map Search Integration</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <a href="https://app.gohighlevel.com/v2/preview/jai93Kp3a3teiftKndBS?notrack=true" target="_blank" rel="noopener">
+                                <img src="successseekersimg.png" 
+                                    alt="Newsletter Opt-In Landing Page" 
+                                    width="280" 
+                                    height="160">
+                            </a>        
+                            <div class="item-content">
+                                <h3>Newsletter Opt-In Landing Page</h3>
+                                <p>High-converting landing page with embedded video, animated elements, multiple opt-in buttons, clean dropdown FAQs, CRM-integrated form with automated email and SMS follow-up.</p>
+                                <div class="item-tags">
+                                    <span class="tag">Conversion Analytics</span>
+                                    <span class="tag">Embedded Videos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://onehellamechanic.com" target="_blank" rel="noopener">
+                                <img src="onehellamechanicimg.png" 
+                                    alt="Local Mobile Mechanic Website" 
+                                    width="280" 
+                                    height="160">
+                            </a>        
+                            <div class="item-content">
+                                <h3>Local Mobile Mechanic Website</h3>
+                                <p>Responsive design with dynamic service area mapping, streamlined booking, clear pricing, and built-in social proof for client trust.</p>
+                                <div class="item-tags">
+                                    <span class="tag">Live Calendar Appointment Integration</span>
+                                    <span class="tag">Client Testimonials</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <a href="https://playharding.com" target="_blank" rel="noopener">
+                                <img src="playhardingimg.png" 
+                                    alt="Vacation Property Showcase Image" 
+                                    width="280" 
+                                    height="160">
+                            </a>        
+                            <div class="item-content">
+                                <h3>Vacation Property Showcase</h3>
+                                <p>Custom vacation rental site featuring dynamic property pages, full-screen image galleries, amenity filtering, embedded booking flows, mobile-responsive layout, and consistent UI across multiple listings.</p>
+                                <div class="item-tags">
+                                    <span class="tag">Embedded Reservation Booking</span>
+                                    <span class="tag">Full-Screen Image Galleries</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://app.gohighlevel.com/v2/preview/IanAXPmeMcwx2w31bkC9?notrack=true" target="_blank" rel="noopener">
+                                <img src="principlespodcastimg.png" 
+                                    alt="Podcast Website Image" 
+                                    width="280" 
+                                    height="160">
+                            </a>        
+                            <div class="item-content">
+                                <h3>Podcast Website</h3>
+                                <p>Embedded podcast episodes with links to major platforms (Spotify, Apple, YouTube), integrated booking calendars for guest scheduling, and dynamic content synced via RSS feeds.</p>
+                                <div class="item-tags">
+                                    <span class="tag">Live RSS Feeds</span>
+                                    <span class="tag">Dynamic Content</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://creativequalified.com" target="_blank" rel="noopener">
+                                <img src="creativequalimg.png" 
+                                    alt="Mortgage Loan Application Landing Page Image" 
+                                    width="280" 
+                                    height="160">
+                            </a>        
+                            <div class="item-content">
+                                <h3>Mortgage Loan Application Landing Page</h3>
+                                <p>Custom site guiding buyers through an online loan application journey with soft credit pull, secure document upload portal, payment gateway integration (Stripe), automated status updates, and conversion-focused form flow.</p>
+                                <div class="item-tags">
+                                    <span class="tag">Payment Gateway Integration</span>
+                                    <span class="tag">Secure Document Uploads</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://app.gohighlevel.com/v2/preview/bnXd6UE0C6IgeeHjkJd2?notrack=true" target="_blank" rel="noopener">
+                                <img src="makinghomeimg2.png" 
+                                    alt="First Time Home Buyer Landing Page Image" 
+                                    width="280" 
+                                    height="160">
+                            </a>        
+                            <div class="item-content">
+                                <h3>First Time Home Buyer Landing Page</h3>
+                                <p>Animated landing page with A/B testing and conversion optimization, multiple CTA buttons, one-click social sign-up (Google, Facebook, LinkedIn), embedded opt-in form with legal compliance, and seamless lead capture for free consultations.</p>
+                                <div class="item-tags">
+                                    <span class="tag">OAuth Integration</span>
+                                    <span class="tag">Legal Compliance</span>
+                                    <span class="tag">A/B Testing with Conversion Optimization</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://app.gohighlevel.com/v2/preview/Td2ZR9hZeKEigsgO9WbX?notrack=true" target="_blank" rel="noopener">
+                                <img src="exassetpropimg.png" 
+                                    alt="KW Partner Real Estate Brokerage Website" 
+                                    width="280" 
+                                    height="160">
+                            </a>        
+                            <div class="item-content">
+                                <h3>KW Partner Real Estate Brokerage</h3>
+                                <p>Full-featured real estate site with integrated IDX MLS search, interactive live map with scrollable property gallery, auto-updating carousels for listings and testimonials, detailed team bios with video, live chat, and conversion-optimized pages for services, contact, and lead capture.</p>
+                                <div class="item-tags">
+                                    <span class="tag">Integrated IDX MLS Search</span>
+                                    <span class="tag">Live Chat</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://app.gohighlevel.com/v2/preview/L0BvjltaSc8WHJh1RVQF?notrack=true" target="_blank" rel="noopener">
+                                <img src="pokerraffleimg3.png" 
+                                    alt="Charity Poker Event Raffle Opt-In Image" 
+                                    width="280" 
+                                    height="160">
+                            </a>
+                            <div class="item-content">
+                                <h3>Charity Poker Event Raffle Opt-In</h3>
+                                <p>Event opt-in page with raffle registration, interactive service checklist, CRM-connected lead capture, and automated backend routing of attendee data to vendor partners for follow-up.</p>
+                                <div class="item-tags">
+                                    <span class="tag">Customized Forms</span>
+                                    <span class="tag">Automated Lead Forwarding</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://canibringyouanoffer.com/" target="_blank" rel="noopener">
+                                <img src="expiredhomeimg.png" 
+                                    alt="High-converting landing page" 
+                                    width="280" 
+                                    height="160">
+                            </a>
+                                <div class="item-content">
+                                    <h3>Direct Mail QR Code Landing Page</h3>
+                                    <p>Landing page with a custom, realistic-sounding, AI-narrated video, multi-step lead capture flow, and fully integrated Google Calendar booking that automates email/text confirmations and delivers a Google Meet link for the free consultation.</p>
+                                    <div class="item-tags">
+                                        <span class="tag">Direct Mail Campaign</span>
+                                        <span class="tag">Dynamic QR Codes with Tracking</span>
+                                        <span class="tag">Realistic AI-Narrated Video</span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://app.gohighlevel.com/v2/preview/Nc1oEMhwBo3LxNtyYnjo?notrack=true/" target="_blank" rel="noopener">
+                                <img src="580fhaimg.png" 
+                                    alt="Mortgage Broker Landing Page Image" 
+                                    width="280" 
+                                    height="160">
+                            </a>
+                                <div class="item-content">
+                                    <h3>Mortgage Broker Landing Page</h3>
+                                    <p>Landing page with custom edited video, persuasive copy, multiple CTA buttons, and a custom opt-in form that feeds directly into the CRM and triggers instant lead notifications via text and email.</p>
+                                    <div class="item-tags">
+                                        <span class="tag">Instant Lead Alerts</span>
+                                        <span class="tag">CRM Integration</span>
+                                        <span class="tag">Video Editing</span>
+                                        <span class="tag">Custom Copywriting</span>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Web Development Coming Soon Card -->
+                    <div class="column-spacer">
+                        <div class="coming-soon-card">
+                            <div class="coming-soon-icon">💻</div>
+                            <h3>More Web Projects Coming Soon</h3>
+                            <p>E-commerce platforms, SaaS applications, and enterprise solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Automation & CRM -->
+                <div class="portfolio-column" data-category="automation">
+                    <div class="column-header">
+                        <h2>Automation & CRM</h2>
+                        <p>Streamlined workflows that save time and increase efficiency</p>
+                    </div>
+                    
+                    <div class="portfolio-items">
+                            <div class="portfolio-item">
+                                <img
+                                src="retransactionworkflow.png"
+                                alt="Real estate transaction intake automation workflow diagram"
+                                width="280"
+                                height="160"
+                                style="cursor: pointer;"
+                                onclick="window.open(
+                                    'retransactionworkflow.svg',
+                                    'fullImage',
+                                    'toolbar=0,location=0,menubar=0,scrollbars=1,width=1200,height=850'
+                                );">
+
+                            <div class="item-content">
+                                <h3>Real Estate Transaction Management Automation</h3>
+                                <p>Comprehensive end-to-end transaction orchestration system that streamlines the entire real estate process from contract to close, ensuring zero missed deadlines and seamless communication between all parties.</p>
+                                <div class="item-tags">
+                                    <span class="tag">CRM Integration</span>
+                                    <span class="tag">Email Automation</span>
+                                    <span class="tag">Pipeline Management</span>
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="portfolio-item">
+                                <img
+                                    src="brokerageanalyticsworkflow.png"
+                                    alt="Real estate brokerage analytics automation workflow diagram"
+                                    width="280"
+                                    height="160"
+                                    style="cursor: pointer;"
+                                    onclick="window.open(
+                                        'brokerageanalyticsworkflow.svg',
+                                        'fullImage',
+                                        'toolbar=0,location=0,menubar=0,scrollbars=1,width=1200,height=850'
+                                    );">
+
+                                <div class="item-content">
+                                    <h3>Real Estate Brokerage Performance Analytics Automation</h3>
+                                    <p>Comprehensive data collection and reporting system that transforms closed transaction inputs into instant performance analytics, providing one-click access to commission reports, transaction volumes, and automated monthly summaries for strategic decision-making.</p>
+                                    <div class="item-tags">
+                                        <span class="tag">Data Analytics</span>
+                                        <span class="tag">Report Automation</span>
+                                        <span class="tag">Performance Tracking</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item">
+                                <img
+                                    src="missedcalltextbackworkflow.png"
+                                    alt="Missed call text back automation workflow diagram"
+                                    width="280"
+                                    height="160"
+                                    style="cursor: pointer;"
+                                    onclick="window.open(
+                                        'missedcalltextbackworkflow.svg',
+                                        'fullImage',
+                                        'toolbar=0,location=0,menubar=0,scrollbars=1,width=1200,height=850'
+                                    );">
+
+                                <div class="item-content">
+                                    <h3>Missed Call Text Back Automation</h3>
+                                    <p>Intelligent missed call recovery system that instantly captures potential leads, sends personalized SMS responses, and ensures no business opportunity is lost through automated follow-up and comprehensive conversation tracking.</p>
+                                    <div class="item-tags">
+                                        <span class="tag">Lead Capture</span>
+                                        <span class="tag">SMS Automation</span>
+                                        <span class="tag">CRM Integration</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item">
+                                <img
+                                    src="qrcodeautomationworkflow.png"
+                                    alt="Custom QR code automation workflow diagram"
+                                    width="280"
+                                    height="160"
+                                    style="cursor: pointer;"
+                                    onclick="window.open(
+                                        'qrcodeautomationworkflow.svg',
+                                        'fullImage',
+                                        'toolbar=0,location=0,menubar=0,scrollbars=1,width=1200,height=850'
+                                    );">
+
+                                <div class="item-content">
+                                    <h3>Custom QR Code Automation Platform</h3>
+                                    <p>Versatile QR code creation and tracking system that transforms any marketing touchpoint into an interactive data collection opportunity, with unlimited customization options for lead capture, event management, and customer engagement across all industries.</p>
+                                    <div class="item-tags">
+                                        <span class="tag">QR Code Generation</span>
+                                        <span class="tag">Lead Capture</span>
+                                        <span class="tag">Event Management</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item">
+                                <img
+                                    src="leadmanagementworkflow.png"
+                                    alt="Multi-source lead management automation workflow diagram"
+                                    width="280"
+                                    height="160"
+                                    style="cursor: pointer;"
+                                    onclick="window.open(
+                                        'leadmanagementworkflow.svg',
+                                        'fullImage',
+                                        'toolbar=0,location=0,menubar=0,scrollbars=1,width=1200,height=850'
+                                    );">
+
+                                <div class="item-content">
+                                    <h3>Multi-Source Lead Management Automation</h3>
+                                    <p>Comprehensive lead orchestration system that seamlessly integrates with any external lead generation platform, automatically processes and nurtures prospects through custom pipelines, ensuring no opportunity is missed and every lead receives personalized attention.</p>
+                                    <div class="item-tags">
+                                        <span class="tag">Lead Integration</span>
+                                        <span class="tag">Pipeline Management</span>
+                                        <span class="tag">Lead Nurturing</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item">
+                                <img
+                                    src="repmanagementworkflow.png"
+                                    alt="Reputation management automation workflow diagram"
+                                    width="280"
+                                    height="160"
+                                    style="cursor: pointer;"
+                                    onclick="window.open(
+                                        'repmanagementworkflow.svg',
+                                        'fullImage',
+                                        'toolbar=0,location=0,menubar=0,scrollbars=1,width=1200,height=850'
+                                    );">
+
+                                <div class="item-content">
+                                    <h3>Reputation Management Automation</h3>
+                                    <p>Comprehensive review monitoring and response system that tracks all major review platforms, instantly notifies you of new feedback, and automatically handles positive reviews while providing recovery tools for negative experiences to protect and enhance your online reputation.</p>
+                                    <div class="item-tags">
+                                        <span class="tag">Review Monitoring</span>
+                                        <span class="tag">Sentiment Analysis</span>
+                                        <span class="tag">Review Request Widget</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item">
+                                <img
+                                    src="databasereactivationworkflow.png"
+                                    alt="Database reactivation automation workflow diagram"
+                                    width="280"
+                                    height="160"
+                                    style="cursor: pointer;"
+                                    onclick="window.open(
+                                        'databasereactivationworkflow.svg',
+                                        'fullImage',
+                                        'toolbar=0,location=0,menubar=0,scrollbars=1,width=1200,height=850'
+                                    );">
+
+                                <div class="item-content">
+                                    <h3>Database Reactivation Automation</h3>
+                                    <p>Intelligent lead reengagement system that monitors inactive contacts and systematically reactivates them through timed, personalized outreach campaigns, automatically managing lead progression based on engagement levels and unsubscribe preferences.</p>
+                                    <div class="item-tags">
+                                        <span class="tag">Lead Reactivation</span>
+                                        <span class="tag">Automated Nurturing</span>
+                                        <span class="tag">Engagement Tracking</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item">
+                                <img
+                                    src="socialmediaautomationworkflow.png"
+                                    alt="Social media automation workflow diagram"
+                                    width="280"
+                                    height="160"
+                                    style="cursor: pointer;"
+                                    onclick="window.open(
+                                        'socialmediaautomationworkflow.svg',
+                                        'fullImage',
+                                        'toolbar=0,location=0,menubar=0,scrollbars=1,width=1200,height=850'
+                                    );">
+
+                                <div class="item-content">
+                                    <h3>Social Media Automation Platform</h3>
+                                    <p>Comprehensive social media management system that leverages AI for content creation, optimizes posting schedules based on audience behavior, and automates engagement across all major platforms while providing detailed performance analytics.</p>
+                                    <div class="item-tags">
+                                        <span class="tag">Content Creation</span>
+                                        <span class="tag">Multi-Platform Posting</span>
+                                        <span class="tag">Audience Analytics</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Automation Coming Soon Card -->
+                            <div class="column-spacer">
+                                <div class="coming-soon-card">
+                                    <div class="coming-soon-icon">🚀</div>
+                                    <h3>More Automation Coming Soon</h3>
+                                    <p>Advanced AI workflows and custom integrations in development</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                
+                <!-- Column 3: Design & Marketing -->
+                <div class="portfolio-column" data-category="design">
+                    <div class="column-header">
+                        <h2>Design & Marketing</h2>
+                        <p>Visual branding that makes your business memorable</p>
+                    </div>
+                    
+                    <div class="portfolio-items">
+                        <div class="portfolio-item">
+                            <img src="ashlarlogo.png" 
+                                 alt="Professional logo designs" 
+                                 width="280" 
+                                 height="160"
+                                 style="cursor: pointer;"
+                                 onclick="openCarouselModal(['ashlarlogo.png', 'brokerownerlogo.png', 'eurekalogo.png', 'mslogo.png', 'servefirstlogo.png', 'successseekerslogo.png', 'successseekerslogo2.png'], 'Professional Logo Designs', 0);">
+                            <div class="item-content">
+                                <h3>Professional Logo Design</h3>
+                                <p>Custom brand identity solutions that create memorable and impactful visual representations for businesses across all industries.</p>
+                                <div class="carousel-container">
+                                    <div class="carousel-track" id="logoCarousel">
+                                        <div class="carousel-item">
+                                            <img src="brokerownerlogo.png" alt="Logo" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['ashlarlogo.png', 'brokerownerlogo.png', 'eurekalogo.png', 'mslogo.png', 'servefirstlogo.png', 'successseekerslogo.png', 'successseekerslogo2.png'], 'Professional Logo Designs', 1);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="eurekalogo.png" alt="Logo" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['ashlarlogo.png', 'brokerownerlogo.png', 'eurekalogo.png', 'mslogo.png', 'servefirstlogo.png', 'successseekerslogo.png', 'successseekerslogo2.png'], 'Professional Logo Designs', 2);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="mslogo.png" alt="Logo" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['ashlarlogo.png', 'brokerownerlogo.png', 'eurekalogo.png', 'mslogo.png', 'servefirstlogo.png', 'successseekerslogo.png', 'successseekerslogo2.png'], 'Professional Logo Designs', 3);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="servefirstlogo.png" alt="Logo" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['ashlarlogo.png', 'brokerownerlogo.png', 'eurekalogo.png', 'mslogo.png', 'servefirstlogo.png', 'successseekerslogo.png', 'successseekerslogo2.png'], 'Professional Logo Designs', 4);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="successseekerslogo.png" alt="Logo" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['ashlarlogo.png', 'brokerownerlogo.png', 'eurekalogo.png', 'mslogo.png', 'servefirstlogo.png', 'successseekerslogo.png', 'successseekerslogo2.png'], 'Professional Logo Designs', 5);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="successseekerslogo2.png" alt="Logo" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['ashlarlogo.png', 'brokerownerlogo.png', 'eurekalogo.png', 'mslogo.png', 'servefirstlogo.png', 'successseekerslogo.png', 'successseekerslogo2.png'], 'Professional Logo Designs', 6);">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-nav carousel-prev" onclick="moveCarousel('logoCarousel', -1)">‹</button>
+                                    <button class="carousel-nav carousel-next" onclick="moveCarousel('logoCarousel', 1)">›</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <img src="podcastcover.png" 
+                                 alt="Custom design work" 
+                                 width="280" 
+                                 height="160"
+                                 style="cursor: pointer;"
+                                 onclick="openCarouselModal(['podcastcover.png', 'podcastspeaker.png', 'argodesign.png'], 'Custom Creative Designs', 0);">
+                            <div class="item-content">
+                                <h3>Custom Creative Designs</h3>
+                                <p>Unique visual solutions including podcast covers, speaker graphics, and specialized design work tailored to specific project needs.</p>
+                                <div class="carousel-container">
+                                    <div class="carousel-track" id="designCarousel">
+                                        <div class="carousel-item">
+                                            <img src="podcastspeaker.png" alt="Design" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['podcastcover.png', 'podcastspeaker.png', 'argodesign.png'], 'Custom Creative Designs', 1);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="argodesign.png" alt="Design" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['podcastcover.png', 'podcastspeaker.png', 'argodesign.png'], 'Custom Creative Designs', 2);">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-nav carousel-prev" onclick="moveCarousel('designCarousel', -1)">‹</button>
+                                    <button class="carousel-nav carousel-next" onclick="moveCarousel('designCarousel', 1)">›</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <img src="homeflyer.png" 
+                                 alt="Marketing flyer design" 
+                                 width="280" 
+                                 height="160"
+                                 style="cursor: pointer;"
+                                 onclick="openSingleImage('homeflyer.png', 'Eye-Catching Flyer');">
+                            <div class="item-content">
+                                <h3>Eye-Catching Flyers</h3>
+                                <p>Professionally designed promotional materials that grab attention and effectively communicate key messages for events and marketing campaigns.</p>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="video-container" onclick="openYouTubeModal('33nI32c64Y4', 'Dynamic Marketing Brochure');">
+                                <img src="jgbrochurethumbnail.png" alt="Seller Brochure Video Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(152, 99, 63, 0.8); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">▶</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Dynamic Marketing Brochures</h3>
+                                <p>Comprehensive marketing collateral that combines compelling visuals with persuasive copy to showcase services and drive conversions.</p>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="video-container" onclick="openYouTubeModal('6IG3teZlB14', 'Monthly Roundup Video');">
+                                <img src="edhmonthlythumbnail.png" alt="Monthly Roundup Video Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(152, 99, 63, 0.8); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">▶</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Slide Decks & Video Content</h3>
+                                <p>Engaging presentations and video content that effectively communicate complex information through dynamic visual storytelling.</p>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <img src="gmqrcode.png" 
+                                 alt="Custom QR codes with landing pages" 
+                                 width="280" 
+                                 height="160"
+                                 style="cursor: pointer;"
+                                 onclick="openCarouselModal(['gmqrcode.png', 'jtqrcode.png', 'jgqrcodeintakeform.png', 'mfqrcode.png'], 'Custom QR Codes with Landing Pages', 0);">
+                            <div class="item-content">
+                                <h3>Custom QR Codes with Landing Pages</h3>
+                                <p>Interactive marketing touchpoints that seamlessly bridge offline and online experiences, complete with custom-designed landing pages for lead capture.</p>
+                                <div class="carousel-container">
+                                    <div class="carousel-track" id="qrCarousel">
+                                        <div class="carousel-item">
+                                            <img src="jtqrcode.png" alt="QR Code" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['gmqrcode.png', 'jtqrcode.png', 'jgqrcodeintakeform.png', 'mfqrcode.png'], 'Custom QR Codes with Landing Pages', 1);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="jgqrcodeintakeform.png" alt="QR Code" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['gmqrcode.png', 'jtqrcode.png', 'jgqrcodeintakeform.png', 'mfqrcode.png'], 'Custom QR Codes with Landing Pages', 2);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="mfqrcode.png" alt="QR Code" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['gmqrcode.png', 'jtqrcode.png', 'jgqrcodeintakeform.png', 'mfqrcode.png'], 'Custom QR Codes with Landing Pages', 3);">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-nav carousel-prev" onclick="moveCarousel('qrCarousel', -1)">‹</button>
+                                    <button class="carousel-nav carousel-next" onclick="moveCarousel('qrCarousel', 1)">›</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <img src="headshotafter.png" 
+                                 alt="Professional headshot photography" 
+                                 width="280" 
+                                 height="160"
+                                 style="cursor: pointer;"
+                                 onclick="openSingleImage('headshotafter.png', 'Professional Headshot Enhancement');">
+                            <div class="item-content">
+                                <h3>Professional Headshot Enhancement</h3>
+                                <p>Expert photography and digital enhancement services that create polished, professional images perfect for business profiles and marketing materials.</p>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <img src="fbad1.png" 
+                                 alt="Social media advertising campaigns" 
+                                 width="280" 
+                                 height="160"
+                                 style="cursor: pointer;"
+                                 onclick="openCarouselModal(['fbad1.png', 'fbad2.png', 'fbad3.png', 'fbad4.png', 'fbad5.png', 'fbad6.png'], 'Social Media Ad Campaigns', 0);">
+                            <div class="item-content">
+                                <h3>Social Media Ad Campaigns</h3>
+                                <p>Targeted advertising designs optimized for maximum engagement and conversion across Facebook, Instagram, and other social platforms.</p>
+                                <div class="carousel-container">
+                                    <div class="carousel-track" id="socialCarousel">
+                                        <div class="carousel-item">
+                                            <img src="fbad2.png" alt="Social Ad" style="width: 22px; height: 22px; object-fit: cover; border-radius: 3px; cursor: pointer;" onclick="openCarouselModal(['fbad1.png', 'fbad2.png', 'fbad3.png', 'fbad4.png', 'fbad5.png', 'fbad6.png'], 'Social Media Ad Campaigns', 1);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="fbad3.png" alt="Social Ad" style="width: 22px; height: 22px; object-fit: cover; border-radius: 3px; cursor: pointer;" onclick="openCarouselModal(['fbad1.png', 'fbad2.png', 'fbad3.png', 'fbad4.png', 'fbad5.png', 'fbad6.png'], 'Social Media Ad Campaigns', 2);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="fbad4.png" alt="Social Ad" style="width: 22px; height: 22px; object-fit: cover; border-radius: 3px; cursor: pointer;" onclick="openCarouselModal(['fbad1.png', 'fbad2.png', 'fbad3.png', 'fbad4.png', 'fbad5.png', 'fbad6.png'], 'Social Media Ad Campaigns', 3);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="fbad5.png" alt="Social Ad" style="width: 22px; height: 22px; object-fit: cover; border-radius: 3px; cursor: pointer;" onclick="openCarouselModal(['fbad1.png', 'fbad2.png', 'fbad3.png', 'fbad4.png', 'fbad5.png', 'fbad6.png'], 'Social Media Ad Campaigns', 4);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="fbad6.png" alt="Social Ad" style="width: 22px; height: 22px; object-fit: cover; border-radius: 3px; cursor: pointer;" onclick="openCarouselModal(['fbad1.png', 'fbad2.png', 'fbad3.png', 'fbad4.png', 'fbad5.png', 'fbad6.png'], 'Social Media Ad Campaigns', 5);">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-nav carousel-prev" onclick="moveCarousel('socialCarousel', -1)">‹</button>
+                                    <button class="carousel-nav carousel-next" onclick="moveCarousel('socialCarousel', 1)">›</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <img src="amazonbook.png" 
+                                 alt="Amazon book publishing design" 
+                                 width="280" 
+                                 height="160"
+                                 style="cursor: pointer;"
+                                 onclick="openSingleImage('amazonbook.png', 'Amazon Book Publishing');">
+                            <div class="item-content">
+                                <h3>Amazon Book Publishing</h3>
+                                <p>Complete book design and publishing services from cover creation to formatting, helping authors successfully launch their publications on Amazon.</p>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <img src="directmail1.png" 
+                                 alt="Direct mail and gift campaigns" 
+                                 width="280" 
+                                 height="160"
+                                 style="cursor: pointer;"
+                                 onclick="openCarouselModal(['directmail1.png', 'directmail2.png', 'directmail3.png', 'directmail4.png', 'directmail5.png'], 'Direct Mail & Gift Campaigns', 0);">
+                            <div class="item-content">
+                                <h3>Direct Mail & Gift Campaigns</h3>
+                                <p>Tangible marketing materials and branded gifts that create lasting impressions and drive meaningful connections with target audiences.</p>
+                                <div class="carousel-container">
+                                    <div class="carousel-track" id="directmailCarousel">
+                                        <div class="carousel-item">
+                                            <img src="directmail2.png" alt="Direct Mail" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['directmail1.png', 'directmail2.png', 'directmail3.png', 'directmail4.png', 'directmail5.png'], 'Direct Mail & Gift Campaigns', 1);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="directmail3.png" alt="Direct Mail" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['directmail1.png', 'directmail2.png', 'directmail3.png', 'directmail4.png', 'directmail5.png'], 'Direct Mail & Gift Campaigns', 2);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="directmail4.png" alt="Direct Mail" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['directmail1.png', 'directmail2.png', 'directmail3.png', 'directmail4.png', 'directmail5.png'], 'Direct Mail & Gift Campaigns', 3);">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="directmail5.png" alt="Direct Mail" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['directmail1.png', 'directmail2.png', 'directmail3.png', 'directmail4.png', 'directmail5.png'], 'Direct Mail & Gift Campaigns', 4);">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-nav carousel-prev" onclick="moveCarousel('directmailCarousel', -1)">‹</button>
+                                    <button class="carousel-nav carousel-next" onclick="moveCarousel('directmailCarousel', 1)">›</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <img src="customemail.png" 
+                                 alt="Custom email template designs" 
+                                 width="280" 
+                                 height="160"
+                                 style="cursor: pointer;"
+                                 onclick="openCarouselModal(['customemail.png', 'sfcustomemail.png'], 'Custom Email Templates', 0);">
+                            <div class="item-content">
+                                <h3>Custom Email Templates</h3>
+                                <p>Branded email campaign designs that ensure consistent communication and professional presentation across all marketing touchpoints.</p>
+                                <div class="carousel-container">
+                                    <div class="carousel-track" id="emailCarousel">
+                                        <div class="carousel-item">
+                                            <img src="sfcustomemail.png" alt="Email Template" style="width: 45px; height: 45px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 2px solid rgba(152, 99, 63, 0.3);" onclick="openCarouselModal(['customemail.png', 'sfcustomemail.png'], 'Custom Email Templates', 1);">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-nav carousel-prev" onclick="moveCarousel('emailCarousel', -1)">‹</button>
+                                    <button class="carousel-nav carousel-next" onclick="moveCarousel('emailCarousel', 1)">›</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marketing Campaign Performance Stats -->
+                        <div class="portfolio-item" style="border: 3px solid rgba(152, 99, 63, 0.6); background: rgba(152, 99, 63, 0.1);">
+                            <div class="item-content" style="text-align: center; padding: 30px 20px;">
+                                <h3 style="color: #98633F; font-size: 1.8rem; margin-bottom: 20px;">Marketing Campaign Performance</h3>
+                                <p style="margin-bottom: 30px; font-size: 1.1rem;">Proven results from our design and marketing campaigns:</p>
+                                
+                                <!-- First image in its own row (short and wide) -->
+                                <div style="margin-bottom: 25px;">
+                                    <img src="bfemailstats.png" 
+                                         alt="Email campaign statistics"
+                                         class="stats-image"
+                                         onclick="openSingleImage('bfemailstats.png', 'Email Campaign Statistics');">
+                                </div>
+                                
+                                <!-- Other three images in a row -->
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                                    <img src="crmdripemailstatscomplete.png" 
+                                         alt="CRM email drip campaign results"
+                                         class="stats-grid-image"
+                                         onclick="openSingleImage('crmdripemailstatscomplete.png', 'CRM Email Drip Campaign Results');">
+                                    
+                                    <img src="ccfebemail.png" 
+                                         alt="Campaign performance metrics"
+                                         class="stats-grid-image"
+                                         onclick="openSingleImage('ccfebemail.png', 'Campaign Performance Metrics');">
+                                    
+                                    <img src="recrme1v1stats.png" 
+                                         alt="Recruitment campaign statistics"
+                                         class="stats-grid-image"
+                                         onclick="openSingleImage('recrme1v1stats.png', 'Recruitment Campaign Statistics');">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Design Coming Soon Card -->
+                        <div class="column-spacer">
+                            <div class="coming-soon-card">
+                                <div class="coming-soon-icon">🎨</div>
+                                <h3>More Design Projects Coming Soon</h3>
+                                <p>Brand packages, UI/UX designs, and creative campaigns in the works</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Featured Case Study Section with Video -->
+        <section class="featured-case-study">
+            <div class="case-study-content">
+                <h2>Featured Case Study: Custom CRM & Transaction Management System</h2>
+                <div class="case-study-grid">                                       
+                    <div class="case-study-text">
+                        <h3 style="color: #214D72;">The Challenge</h3>
+                        <p>A growing real estate brokerage was drowning in manual transaction management, missing critical deadlines, and struggling to maintain consistent communication with all parties involved in their deals. With multiple agents handling several transactions simultaneously, important details were falling through the cracks and client satisfaction was suffering.</p>
+                        
+                        <h3 style="color: #214D72;">The Solution</h3>
+                        <p>I designed and built a comprehensive custom CRM system using HighLevel, featuring:</p>
+                        <ul>
+                            <li><strong>Custom Transaction Input Portal:</strong> Centralized dashboard where agents input contract details, deadlines, and all party information</li>
+                            <li><strong>Automated Contact Management:</strong> All transaction participants (buyers, sellers, agents, lenders, escrow, title, insurance, vendors) automatically linked by property address</li>
+                            <li><strong>Smart Pipeline System:</strong> Transactions move through stages with automated deadline tracking and agent prompts</li>
+                            <li><strong>Personalized Communication:</strong> Custom automated emails to each party type with relevant information and deadline reminders</li>
+                            <li><strong>Document Management:</strong> Contract upload, storage, and automatic distribution to all relevant parties</li>
+                            <li><strong>Lead Nurturing System:</strong> New prospects automatically enter educational email sequences tailored to buyers, sellers, or investors</li>
+                            <li><strong>Closing Analytics:</strong> Automated data collection and monthly reporting for transactions, volume, and commissions</li>
+                            <li><strong>One-Click Reporting:</strong> Instant access to agent and company performance metrics (all-time, YTD, monthly)</li>
+                            <li><strong>Integrated Marketing:</strong> Direct mail and gift automation for prospects, clients, anniversaries, and birthdays</li>
+                        </ul>
+                        
+                        <h3 style="color: #214D72;">The Results</h3>
+                        <div class="results-stats">
+                            <div class="result-item">
+                                <span class="result-number">95%</span>
+                                <span class="result-label">Reduction in Missed Deadlines</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">25 hrs</span>
+                                <span class="result-label">Saved Per Agent Weekly</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">40%</span>
+                                <span class="result-label">Increase in Lead Conversion</span>
+                            </div>
+                        </div>
+                        
+                        <blockquote>
+                            <p>"This CRM transformation completely revolutionized our brokerage operations. We went from constantly scrambling to meet deadlines to having everything automated and organized. Our agents can now focus on serving clients instead of chasing paperwork, and our conversion rates have never been higher!"</p>
+                            <cite>- Sarah Mitchell, Broker/Owner, Premier Real Estate Group</cite>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="case-study-video">
+                        <h3 style="color: #214D72;">Complete System Walkthrough</h3>
+                        <!-- Embedded Local Video -->
+                        <div class="video-container" onclick="openVideoModal('recrmdemovideo.mp4', 'Custom CRM System Walkthrough');">
+                            <video width="400" height="225" preload="metadata" muted>
+                                <source src="recrmdemovideo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(152, 99, 63, 0.8); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); cursor: pointer;">▶</div>
+                        </div>
+                        <p>Watch this comprehensive demo showcasing the complete CRM system, from transaction input to automated reporting and everything in between.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer-section">
+            <div class="footer-content">
+                <!-- Contact Grid - Side by Side -->
+                <div class="contact-grid">
+                    <!-- Mindy on the Left -->
+                    <div class="contact-person">
+                        <h4>Mindy Sideris</h4>
+                        <div class="role">Full-Stack & CRM Developer | Creative Technologist</div>
+                        <div class="contact-details">
+                            <a href="mailto:mindysideris@gmail.com" style="color: #CBCBCB; text-decoration: none;">mindysideris@gmail.com</a><br>
+                            (916) 932-3131
+                        </div>
+                    </div>
+                    
+                    <!-- Guillermo on the Right -->
+                    <div class="contact-person">
+                        <h4>Guillermo Serafin</h4>
+                        <div class="role">Consultant</div>
+                        <div class="contact-details">
+                            <a href="mailto:info@thecultyourcompany.com" style="color: #CBCBCB; text-decoration: none;">info@thecultyourcompany.com</a><br>
+                            (279) 900-6256
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Copyright Centered at Bottom -->
+                <div class="footer-legal">
+                    <p style="color: #98633F;">&copy; 2025 HighLevel Integrations. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- JavaScript for Portfolio Filtering, Parallax, and Carousels -->
+    <script>
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-bg');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+        
+        // Portfolio filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioColumns = document.querySelectorAll('.portfolio-column');
+            const portfolioGrid = document.querySelector('.portfolio-grid');
+            const portfolioMain = document.querySelector('.portfolio-main');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    if (filterValue === 'all') {
+                        // Show all columns in 3-column layout
+                        portfolioGrid.classList.remove('filtered');
+                        portfolioMain.classList.remove('filtered');
+                        portfolioColumns.forEach(column => {
+                            column.style.display = 'block';
+                        });
+                    } else {
+                        // Show only selected category in full-width layout
+                        portfolioGrid.classList.add('filtered');
+                        portfolioMain.classList.add('filtered');
+                        portfolioColumns.forEach(column => {
+                            const category = column.getAttribute('data-category');
+                            if (category === filterValue) {
+                                column.style.display = 'block';
+                            } else {
+                                column.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Initialize carousels
+            initializeCarousels();
+            
+            // Update carousels on window resize
+            window.addEventListener('resize', function() {
+                Object.keys(carouselPositions).forEach(carouselId => {
+                    carouselPositions[carouselId] = 0;
+                    const carousel = document.getElementById(carouselId);
+                    if (carousel) {
+                        carousel.style.transform = 'translateX(0px)';
+                        updateCarouselButtons(carouselId);
+                    }
+                });
+            });
+        });
+        
+        // Carousel functionality - changes main featured image
+        let carouselPositions = {};
+        let carouselImages = {
+            'logoCarousel': ['ashlarlogo.png', 'brokerownerlogo.png', 'eurekalogo.png', 'mslogo.png', 'servefirstlogo.png', 'successseekerslogo.png', 'successseekerslogo2.png'],
+            'designCarousel': ['podcastcover.png', 'podcastspeaker.png', 'argodesign.png'],
+            'qrCarousel': ['gmqrcode.png', 'jtqrcode.png', 'jgqrcodeintakeform.png', 'mfqrcode.png'],
+            'socialCarousel': ['fbad1.png', 'fbad2.png', 'fbad3.png', 'fbad4.png', 'fbad5.png', 'fbad6.png'],
+            'directmailCarousel': ['directmail1.png', 'directmail2.png', 'directmail3.png', 'directmail4.png', 'directmail5.png'],
+            'emailCarousel': ['customemail.png', 'sfcustomemail.png']
+        };
+        
+        function initializeCarousels() {
+            Object.keys(carouselImages).forEach(carouselId => {
+                carouselPositions[carouselId] = 0;
+                updateCarouselButtons(carouselId);
+            });
+        }
+        
+        function moveCarousel(carouselId, direction) {
+            const images = carouselImages[carouselId];
+            if (!images) {
+                console.log('No images found for carousel:', carouselId);
+                return;
+            }
+            
+            const currentIndex = carouselPositions[carouselId] || 0;
+            let newIndex = currentIndex + direction;
+            
+            // Boundary checks
+            if (newIndex < 0) {
+                newIndex = 0;
+            }
+            if (newIndex >= images.length) {
+                newIndex = images.length - 1;
+            }
+            
+            // Update position
+            carouselPositions[carouselId] = newIndex;
+            
+            // Update the main featured image
+            updateMainImage(carouselId, images[newIndex]);
+            
+            // Update button states
+            updateCarouselButtons(carouselId);
+            
+            console.log(`Moving ${carouselId}: direction=${direction}, newIndex=${newIndex}, newImage=${images[newIndex]}`);
+        }
+        
+        function updateMainImage(carouselId, newImageSrc) {
+            // Find the main featured image for this carousel
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+            
+            const portfolioItem = carousel.closest('.portfolio-item');
+            if (!portfolioItem) return;
+            
+            const mainImage = portfolioItem.querySelector('img[width="280"]');
+            if (mainImage) {
+                mainImage.src = newImageSrc;
+                // Update the onclick to use the current image for the modal
+                const images = carouselImages[carouselId];
+                const currentIndex = carouselPositions[carouselId] || 0;
+                const modalTitles = {
+                    'logoCarousel': 'Professional Logo Designs',
+                    'designCarousel': 'Custom Creative Designs', 
+                    'qrCarousel': 'Custom QR Codes with Landing Pages',
+                    'socialCarousel': 'Social Media Ad Campaigns',
+                    'directmailCarousel': 'Direct Mail & Gift Campaigns',
+                    'emailCarousel': 'Custom Email Templates'
+                };
+                
+                mainImage.onclick = function() {
+                    openCarouselModal(images, modalTitles[carouselId], currentIndex);
+                };
+            }
+        }
+        
+        function updateCarouselButtons(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+            
+            const container = carousel.parentElement;
+            const prevBtn = container.querySelector('.carousel-prev');
+            const nextBtn = container.querySelector('.carousel-next');
+            const images = carouselImages[carouselId];
+            
+            if (!prevBtn || !nextBtn || !images) return;
+            
+            const currentIndex = carouselPositions[carouselId] || 0;
+            
+            // Update button states
+            prevBtn.disabled = currentIndex <= 0;
+            nextBtn.disabled = currentIndex >= images.length - 1;
+            
+            // Always show buttons if there are multiple images
+            if (images.length <= 1) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
+            }
+            
+            console.log(`Updating buttons for ${carouselId}: currentIndex=${currentIndex}, totalImages=${images.length}`);
+        }
+        
+        // Video modal functionality - with muted audio by default
+        function openVideoModal(videoSrc, title) {
+            // Calculate center position
+            const windowWidth = 900;
+            const windowHeight = 600;
+            const left = (screen.width - windowWidth) / 2;
+            const top = (screen.height - windowHeight) / 2;
+            
+            const popup = window.open('', 'videoModal', `toolbar=0,location=0,menubar=0,scrollbars=1,width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            
+            const videoHTML = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>${title}</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+                    <style>
+                        body { 
+                            margin: 0; 
+                            padding: 20px; 
+                            background: #000508; 
+                            color: #CBCBCB; 
+                            font-family: 'Lato', sans-serif;
+                            text-align: center;
+                        }
+                        .video-container { 
+                            max-width: 100%; 
+                            margin: 0 auto; 
+                        }
+                        .video-title {
+                            font-size: 1.8rem;
+                            color: #98633F;
+                            margin-bottom: 20px;
+                            font-family: 'Playfair Display', serif;
+                        }
+                        .video-player { 
+                            width: 100%;
+                            max-width: 800px;
+                            height: auto;
+                            margin: 20px auto; 
+                            display: block;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 15px rgba(152, 99, 63, 0.3);
+                        }
+                        .video-note {
+                            color: #98633F;
+                            font-size: 0.9rem;
+                            margin-top: 15px;
+                            opacity: 0.8;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="video-container">
+                        <h1 class="video-title">${title}</h1>
+                        <video class="video-player" controls preload="metadata" muted>
+                            <source src="${videoSrc}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-note">
+                            Video is muted by default - click the volume button to enable sound
+                        </div>
+                    </div>
+                    
+                    <script>
+                        // Ensure video starts muted
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const video = document.querySelector('.video-player');
+                            if (video) {
+                                video.muted = true;
+                                video.volume = 0;
+                            }
+                        });
+                        
+                        // Force mute on play if user hasn't unmuted
+                        document.querySelector('.video-player').addEventListener('play', function() {
+                            if (this.muted === false && this.volume > 0) {
+                                // Only allow sound if user has explicitly clicked unmute
+                                const userHasUnmuted = this.hasAttribute('data-user-unmuted');
+                                if (!userHasUnmuted) {
+                                    this.muted = true;
+                                }
+                            }
+                        });
+                        
+                        // Track when user manually unmutes
+                        document.querySelector('.video-player').addEventListener('volumechange', function() {
+                            if (!this.muted && this.volume > 0) {
+                                this.setAttribute('data-user-unmuted', 'true');
+                            }
+                        });
+                    <\/script>
+                </body>
+                </html>
+            `;
+            
+            popup.document.write(videoHTML);
+            popup.document.close();
+        }
+
+        // YouTube video modal functionality - with muted audio by default
+        function openYouTubeModal(videoId, title) {
+            // Calculate center position
+            const windowWidth = 900;
+            const windowHeight = 600;
+            const left = (screen.width - windowWidth) / 2;
+            const top = (screen.height - windowHeight) / 2;
+            
+            const popup = window.open('', 'youtubeModal', `toolbar=0,location=0,menubar=0,scrollbars=1,width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            
+            const videoHTML = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>${title}</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+                    <style>
+                        body { 
+                            margin: 0; 
+                            padding: 20px; 
+                            background: #000508; 
+                            color: #CBCBCB; 
+                            font-family: 'Lato', sans-serif;
+                            text-align: center;
+                        }
+                        .video-container { 
+                            max-width: 100%; 
+                            margin: 0 auto; 
+                        }
+                        .video-title {
+                            font-size: 1.8rem;
+                            color: #98633F;
+                            margin-bottom: 20px;
+                            font-family: 'Playfair Display', serif;
+                        }
+                        .youtube-player { 
+                            width: 100%;
+                            max-width: 800px;
+                            height: 450px;
+                            margin: 20px auto; 
+                            display: block;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 15px rgba(152, 99, 63, 0.3);
+                        }
+                        .video-note {
+                            color: #98633F;
+                            font-size: 0.9rem;
+                            margin-top: 15px;
+                            opacity: 0.8;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="video-container">
+                        <h1 class="video-title">${title}</h1>
+                        <iframe class="youtube-player" 
+                                src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&modestbranding=1&rel=0&showinfo=0&controls=1"
+                                title="${title}" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                        </iframe>
+                        <div class="video-note">
+                            Video is muted by default - click the volume button to enable sound
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            popup.document.write(videoHTML);
+            popup.document.close();
+        }
+        
+        // Carousel modal functionality
+        function openCarouselModal(images, title, startIndex = 0) {
+            // Calculate center position
+            const windowWidth = 900;
+            const windowHeight = 700;
+            const left = (screen.width - windowWidth) / 2;
+            const top = (screen.height - windowHeight) / 2;
+            
+            const popup = window.open('', 'carouselModal', `toolbar=0,location=0,menubar=0,scrollbars=1,width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            
+            const modalHTML = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>${title}</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+                    <style>
+                        body { 
+                            margin: 0; 
+                            padding: 20px; 
+                            background: #000508; 
+                            color: #CBCBCB; 
+                            font-family: 'Lato', sans-serif;
+                            text-align: center;
+                        }
+                        .modal-container { 
+                            max-width: 100%; 
+                            margin: 0 auto; 
+                        }
+                        .modal-title {
+                            font-size: 1.8rem;
+                            color: #98633F;
+                            margin-bottom: 20px;
+                            font-family: 'Playfair Display', serif;
+                        }
+                        .modal-image { 
+                            max-width: 90%; 
+                            max-height: 500px; 
+                            margin: 20px auto; 
+                            display: block;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 15px rgba(152, 99, 63, 0.3);
+                        }
+                        .modal-nav { 
+                            margin: 20px 0; 
+                        }
+                        .nav-btn {
+                            background: rgba(152, 99, 63, 0.3);
+                            border: 2px solid #98633F;
+                            color: #CBCBCB;
+                            padding: 10px 20px;
+                            margin: 0 10px;
+                            border-radius: 25px;
+                            cursor: pointer;
+                            font-family: 'Lato', sans-serif;
+                        }
+                        .nav-btn:hover {
+                            background: rgba(152, 99, 63, 0.5);
+                        }
+                        .nav-btn:disabled {
+                            opacity: 0.3;
+                            cursor: not-allowed;
+                        }
+                        .image-counter {
+                            color: #98633F;
+                            font-size: 0.9rem;
+                            margin-top: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="modal-container">
+                        <h1 class="modal-title">${title}</h1>
+                        <img id="modalImage" class="modal-image" src="${images[startIndex]}" alt="${title}">
+                        <div class="modal-nav">
+                            <button class="nav-btn" onclick="previousImage()">← Previous</button>
+                            <button class="nav-btn" onclick="nextImage()">Next →</button>
+                        </div>
+                        <div class="image-counter">
+                            <span id="imageCounter">${startIndex + 1} of ${images.length}</span>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        let currentIndex = ${startIndex};
+                        const images = ${JSON.stringify(images)};
+                        
+                        function updateImage() {
+                            document.getElementById('modalImage').src = images[currentIndex];
+                            document.getElementById('imageCounter').textContent = (currentIndex + 1) + ' of ' + images.length;
+                            
+                            // Update button states
+                            const prevBtn = document.querySelector('.nav-btn');
+                            const nextBtn = document.querySelectorAll('.nav-btn')[1];
+                            
+                            prevBtn.disabled = currentIndex === 0;
+                            nextBtn.disabled = currentIndex === images.length - 1;
+                        }
+                        
+                        function nextImage() {
+                            if (currentIndex < images.length - 1) {
+                                currentIndex++;
+                                updateImage();
+                            }
+                        }
+                        
+                        function previousImage() {
+                            if (currentIndex > 0) {
+                                currentIndex--;
+                                updateImage();
+                            }
+                        }
+                        
+                        // Keyboard navigation
+                        document.addEventListener('keydown', function(e) {
+                            if (e.key === 'ArrowRight') nextImage();
+                            if (e.key === 'ArrowLeft') previousImage();
+                        });
+                        
+                        // Initialize button states
+                        updateImage();
+                    <\/script>
+                </body>
+                </html>
+            `;
+            
+            popup.document.write(modalHTML);
+            popup.document.close();
+        }
+        
+        // Single image modal functionality - centered popups
+        function openSingleImage(imageSrc, title) {
+            // Calculate center position
+            const windowWidth = 1000;
+            const windowHeight = 700;
+            const left = (screen.width - windowWidth) / 2;
+            const top = (screen.height - windowHeight) / 2;
+            
+            const popup = window.open('', 'singleImageModal', `toolbar=0,location=0,menubar=0,scrollbars=1,width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            
+            const imageHTML = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>${title}</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+                    <style>
+                        body { 
+                            margin: 0; 
+                            padding: 20px; 
+                            background: #000508; 
+                            color: #CBCBCB; 
+                            font-family: 'Lato', sans-serif;
+                            text-align: center;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            min-height: 100vh;
+                        }
+                        .image-container { 
+                            max-width: 95%; 
+                            margin: 0 auto; 
+                        }
+                        .image-title {
+                            font-size: 1.8rem;
+                            color: #98633F;
+                            margin-bottom: 20px;
+                            font-family: 'Playfair Display', serif;
+                        }
+                        .single-image { 
+                            max-width: 100%; 
+                            max-height: 80vh; 
+                            margin: 0 auto; 
+                            display: block;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 15px rgba(152, 99, 63, 0.3);
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="image-container">
+                        <h1 class="image-title">${title}</h1>
+                        <img class="single-image" src="${imageSrc}" alt="${title}">
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            popup.document.write(imageHTML);
+            popup.document.close();
+        }
+    </script>
+</body>
+</html>

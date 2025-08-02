@@ -1,0 +1,193 @@
+<svg viewBox="0 0 1200 850" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <dropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000508" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#98633F"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#214D72"/>
+    </marker>
+    <marker id="arrowhead3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrowhead4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C62828"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="850" fill="#000508"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" fill="#98633F" font-family="serif" font-size="30" font-weight="bold">
+    Reputation Management Automation
+  </text>
+  
+  <!-- BOXES -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Review Monitoring</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Google Reviews</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Facebook Reviews</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Yelp Reviews</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Zillow Reviews</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Industry Platforms</text>
+    <text x="100" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">24/7 Monitoring</text>
+  </g>
+  
+  <g transform="translate(320, 100)">
+    <rect x="0" y="0" width="180" height="120" rx="10" fill="#214D72" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="90" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Sentiment Analysis</text>
+    <text x="90" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Review Classification</text>
+    <text x="90" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Star Rating Analysis</text>
+    <text x="90" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Keyword Detection</text>
+    <text x="90" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Tone Assessment</text>
+    <text x="90" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Auto Categorization</text>
+  </g>
+  
+  <g transform="translate(570, 100)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#98633F" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">User Notification</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Instant Email Alert</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• SMS Notification</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Review Details</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Platform Source</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Response Options</text>
+  </g>
+  
+  <g transform="translate(840, 100)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#404040" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="13" font-weight="bold">Review Request Widgets</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Website Integration</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Email Signatures</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• QR Code Generation</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Custom Landing Pages</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Client Requests</text>
+    <text x="100" y="125" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Proactive Generation</text>
+  </g>
+  
+  <!-- Positive Review Handling -->
+  <g transform="translate(200, 340)">
+    <rect x="0" y="0" width="220" height="140" rx="10" fill="#2E7D32" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="110" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Positive Review Response</text>
+    <text x="110" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Automatic Thank You</text>
+    <text x="110" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Client Appreciation</text>
+    <text x="110" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Website Posting</text>
+    <text x="110" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Social Media Sharing</text>
+    <text x="110" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Testimonial Collection</text>
+    <text x="110" y="125" text-anchor="middle" fill="#4CAF50" font-family="sans-serif" font-size="11" font-weight="bold">Reputation Building</text>
+  </g>
+  
+  <!-- Negative Review Recovery -->
+  <g transform="translate(480, 340)">
+    <rect x="0" y="0" width="240" height="140" rx="10" fill="#C62828" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="120" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Negative Review Recovery</text>
+    <text x="120" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Private Feedback Form</text>
+    <text x="120" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Issue Resolution Request</text>
+    <text x="120" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Meeting Scheduling</text>
+    <text x="120" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Apology Templates</text>
+    <text x="120" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11">• Follow-Up Automation</text>
+    <text x="120" y="125" text-anchor="middle" fill="#FF5722" font-family="sans-serif" font-size="11" font-weight="bold">Damage Control</text>
+  </g>
+  
+  <!-- Analytics & Reporting -->
+  <g transform="translate(780, 340)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#404040" stroke="#CBCBCB" stroke-width="3"/>
+    <text x="100" y="25" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="14" font-weight="bold">Analytics &amp; Reporting</text>
+    <text x="100" y="45" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Review Trends</text>
+    <text x="100" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Sentiment Tracking</text>
+    <text x="100" y="75" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Response Times</text>
+    <text x="100" y="90" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Platform Performance</text>
+    <text x="100" y="105" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">• Reputation Score</text>
+    <text x="100" y="125" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12">Business Intelligence</text>
+  </g>
+  
+  <!-- Main Flow Arrows -->
+  <path d="M 260 170 L 310 170" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 510 170 L 560 170" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Branching Arrows -->
+  <path d="M 620 230 L 380 330" stroke="#2E7D32" stroke-width="4" fill="none" marker-end="url(#arrowhead3)"/>
+  <text x="300" y="290" fill="#2E7D32" font-family="sans-serif" font-size="12" font-weight="bold">Positive Review</text>
+  
+  <path d="M 720 230 L 600 330" stroke="#C62828" stroke-width="4" fill="none" marker-end="url(#arrowhead4)"/>
+  <text x="700" y="290" fill="#C62828" font-family="sans-serif" font-size="12" font-weight="bold">Negative Review</text>
+  
+  <!-- Supporting Arrows -->
+  <path d="M 780 170 L 830 170" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 880 250 L 880 330" stroke="#98633F" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Blue Feedback Loop -->
+  <path
+    d="M 1060 170 Q 1110 220 1110 360 Q 1110 410 1050 410 L 1000 410"
+    stroke="#214D72"
+    stroke-width="4"
+    fill="none"
+    stroke-dasharray="6,6"
+    marker-end="url(#arrowhead2)"
+  />
+  <text x="990" y="360" fill="#214D72" font-family="sans-serif" font-size="13" font-weight="bold" font-style="italic">
+    Continuous
+  </text>
+  <text x="1000" y="375" fill="#214D72" font-family="sans-serif" font-size="13" font-weight="bold" font-style="italic">
+    Improvement
+  </text>
+  
+  <!-- Key Business Benefits -->
+  <g transform="translate(50, 530)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(33, 77, 114, 0.2)" stroke="#98633F" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="18" font-weight="bold">Key Business Benefits</text>
+    <text x="150" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Instant Awareness</text>
+    <text x="150" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Real-Time Alerts</text>
+    <text x="350" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Smart Response System</text>
+    <text x="350" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Automated Handling</text>
+    <text x="550" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Reputation Protection</text>
+    <text x="550" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Damage Control</text>
+    <text x="750" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Review Generation</text>
+    <text x="750" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Proactive Collection</text>
+    <text x="950" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="12" font-weight="bold">Complete Analytics</text>
+    <text x="950" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="11" font-weight="bold">Performance Insights</text>
+  </g>
+  
+  <!-- Technology Integration -->
+  <g transform="translate(50, 650)">
+    <rect x="0" y="0" width="1100" height="100" rx="10" fill="rgba(152, 99, 63, 0.2)" stroke="#214D72" stroke-width="1"/>
+    <text x="550" y="30" text-anchor="middle" fill="#214D72" font-family="sans-serif" font-size="18" font-weight="bold">Technology Integration</text>
+    <text x="70" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Platform APIs</text>
+    <text x="70" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Multi-Site Monitoring</text>
+    <text x="205" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">AI Sentiment Engine</text>
+    <text x="205" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Smart Classification</text>
+    <text x="350" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Notification System</text>
+    <text x="350" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Multi-Channel Alerts</text>
+    <text x="480" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Widget Builder</text>
+    <text x="480" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Custom Integration</text>
+    <text x="610" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Response Templates</text>
+    <text x="610" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Automated Replies</text>
+    <text x="750" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Website Integration</text>
+    <text x="750" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Auto-Publishing</text>
+    <text x="885" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Scheduling System</text>
+    <text x="885" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Meeting Automation</text>
+    <text x="1020" y="60" text-anchor="middle" fill="#CBCBCB" font-family="sans-serif" font-size="11" font-weight="bold">Analytics Dashboard</text>
+    <text x="1020" y="75" text-anchor="middle" fill="#98633F" font-family="sans-serif" font-size="10" font-weight="bold">Reputation Tracking</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(25, 750)">
+    <circle cx="70" cy="20" r="8" fill="#98633F"/>
+    <text x="85" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Gold - Notifications</text>
+    <circle cx="215" cy="20" r="8" fill="#214D72"/>
+    <text x="230" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Blue - Processing</text>
+    <circle cx="345" cy="20" r="8" fill="#404040"/>
+    <text x="360" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Dark Grey - Tools</text>
+    <circle cx="475" cy="20" r="8" fill="#2E7D32"/>
+    <text x="490" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Green - Positive Reviews</text>
+    <circle cx="650" cy="20" r="8" fill="#C62828"/>
+    <text x="665" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Red - Negative Reviews</text>
+    <line x1="810" y1="20" x2="850" y2="20" stroke="#98633F" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="870" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Main Flow</text>
+    <line x1="935" y1="20" x2="985" y2="20" stroke="#214D72" stroke-width="4" stroke-dasharray="6,6" marker-end="url(#arrowhead2)"/>
+    <text x="995" y="25" fill="#CBCBCB" font-family="sans-serif" font-size="11">Improvement Loop</text>
+  </g>
+</svg>
