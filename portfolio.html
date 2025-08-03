@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <!-- 
-        Edited 08.01.25 to make it for company.
+        Optimized portfolio page for better layout and responsiveness, 08.02.2025
     -->
 <head>
     <meta charset="UTF-8">
@@ -9,11 +9,333 @@
     <title>Portfolio &amp; Services - HighLevel Integrations</title>
     <link rel="icon" type="image/png" href="ms.png">
     <link rel="shortcut icon" type="image/png" href="ms.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="portfolio-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Additional styles for carousel functionality */
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and General Layout */
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #000508;
+            color: #CBCBCB;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* IMPROVED: Box Model Wrapper - Better width utilization */
+        .wrapper {
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 5, 8, 0.85);
+            backdrop-filter: blur(12px);
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* IMPROVED: Enhanced Parallax Background Effect */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #000508 0%, #214D72 30%, #000508 60%, #98633F 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+            z-index: -1;
+            will-change: transform;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* IMPROVED: Enhanced Header and Navigation */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            backdrop-filter: blur(20px);
+            background: rgba(0, 5, 8, 0.95);
+            border-bottom: 2px solid rgba(203, 203, 203, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #CBCBCB;
+            font-weight: 600;
+        }
+
+        .logo-title {
+            font-size: 0.9rem;
+            color: #98633F;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* IMPROVED: Much More Visible Navigation */
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 14px 28px;
+            color: #CBCBCB;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background: rgba(203, 203, 203, 0.08);
+            border: 2px solid rgba(203, 203, 203, 0.25);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            backdrop-filter: blur(20px);
+            background: rgba(152, 99, 63, 0.2);
+            border: 2px solid rgba(152, 99, 63, 0.6);
+            color: #98633F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(152, 99, 63, 0.3);
+            font-weight: 700;
+        }
+
+        /* Page Hero Section */
+        .page-hero {
+            padding: 60px 40px 40px;
+            text-align: center;
+            background: rgba(33, 77, 114, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(203, 203, 203, 0.1);
+        }
+
+        .page-hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #CBCBCB;
+            margin-bottom: 16px;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: #98633F;
+            margin-bottom: 0;
+        }
+
+        /* Filter Navigation */
+        .filter-nav {
+            padding: 30px 40px;
+            background: rgba(0, 5, 8, 0.5);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(203, 203, 203, 0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: rgba(33, 77, 114, 0.2);
+            border: 2px solid rgba(203, 203, 203, 0.2);
+            border-radius: 25px;
+            color: #CBCBCB;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: rgba(152, 99, 63, 0.3);
+            border-color: #98633F;
+            color: #98633F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(152, 99, 63, 0.3);
+        }
+
+        /* IMPROVED: Portfolio Main Layout */
+        .portfolio-main {
+            padding: 40px;
+            width: 100%;
+        }
+
+        /* IMPROVED: Portfolio Grid - Better width utilization */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+            width: 100%;
+            max-width: none;
+        }
+
+        /* IMPROVED: Single category filtered view */
+        .portfolio-main.filtered .portfolio-grid {
+            grid-template-columns: 1fr;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .portfolio-column {
+            width: 100%;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        .column-header {
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 25px 20px;
+            background: rgba(33, 77, 114, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(203, 203, 203, 0.1);
+            border-radius: 15px;
+        }
+
+        .column-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #98633F;
+            margin-bottom: 10px;
+            border: none;
+            padding: 0;
+        }
+
+        .column-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .portfolio-items {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            min-height: 0;
+        }
+
+        /* Portfolio Item Styles */
+        .portfolio-item {
+            background: rgba(33, 77, 114, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(203, 203, 203, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            background: rgba(33, 77, 114, 0.2);
+            border-color: rgba(152, 99, 63, 0.3);
+            box-shadow: 0 8px 25px rgba(152, 99, 63, 0.2);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid rgba(152, 99, 63, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item img:hover {
+            transform: scale(1.02);
+        }
+
+        .item-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #CBCBCB;
+            margin-bottom: 12px;
+        }
+
+        .item-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .item-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: rgba(152, 99, 63, 0.2);
+            color: #98633F;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(152, 99, 63, 0.3);
+        }
+
+        /* Carousel Styles */
         .carousel-container {
             position: relative;
             margin-top: 15px;
@@ -78,31 +400,8 @@
             transform: translateY(-50%) scale(1);
             background: rgba(152, 99, 63, 0.4);
         }
-        
-        /* Ensure equal column widths */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            align-items: stretch; /* This makes all columns equal height */
-            width: 100%;
-        }
-        
-        .portfolio-column {
-            width: 100%;
-            min-width: 0; /* Prevents flex overflow */
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .portfolio-items {
-            flex: 1; /* This makes the items container expand to fill available space */
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-        
-        /* Add a "spacer" element to fill remaining space */
+
+        /* Coming Soon Cards */
         .column-spacer {
             flex: 1;
             min-height: 20px;
@@ -143,33 +442,37 @@
             color: rgba(152, 99, 63, 0.4);
             margin-bottom: 15px;
         }
-        
-        /* Video containers to be responsive when filtered */
+
+        /* Video Container Styles */
         .video-container {
             position: relative;
-            width: 280px;
-            height: 160px;
+            width: 100%;
+            height: 80%;
             background: #000;
             border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .video-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        /* YouTube iframe styling */
         .youtube-embed {
-            width: 280px;
+            width: 100%;
             height: 160px;
             border-radius: 8px;
             border: 2px solid rgba(152, 99, 63, 0.3);
         }
         
-        /* Video containers responsive when filtered */
         .portfolio-grid.filtered .video-container {
             width: 100%;
-            height: auto;
-            aspect-ratio: 16/9;
+            height: 160px;
             order: 2;
-            border-radius: 0 0 15px 15px;
+            border-radius: 8px;
         }
         
         .portfolio-grid.filtered .video-container img {
@@ -183,8 +486,7 @@
             height: auto;
             aspect-ratio: 16/9;
         }
-        
-        /* Fix for percentage width images */
+
         .stats-image {
             width: 100%;
             cursor: pointer;
@@ -201,89 +503,234 @@
             border: 2px solid rgba(152, 99, 63, 0.3);
         }
 
-        /* Logo Section */
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        /* IMPROVED: Featured Case Study Section - Single Column Layout */
+        .featured-case-study {
+            padding: 60px 40px;
+            background: rgba(33, 77, 114, 0.1);
+            backdrop-filter: blur(10px);
+            border-top: 2px solid rgba(152, 99, 63, 0.3);
+            margin-top: 40px;
         }
 
-        .logo-image {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-            transition: transform 0.3s ease;
+        .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .logo-image:hover {
-            transform: scale(1.05);
+        .case-study-content > h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #98633F;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid rgba(152, 99, 63, 0.3);
+            padding-bottom: 20px;
         }
 
-        .logo-text {
+        /* IMPROVED: Single column layout for better balance */
+        .case-study-grid {
             display: flex;
             flex-direction: column;
-            line-height: 1.1;
+            gap: 40px;
         }
 
-        .logo-name {
+        /* Video section comes first and is prominently featured */
+        .case-study-video {
+            text-align: center;
+            order: 1;
+        }
+
+        .case-study-video h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: #CBCBCB;
-            font-weight: 600;
+            font-size: 1.8rem;
+            color: #214D72;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .logo-title {
-            font-size: 0.9rem;
+        .case-study-video p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        /* Text content comes second */
+        .case-study-text {
+            order: 2;
+        }
+
+        .case-study-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #214D72;
+            margin-bottom: 16px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .case-study-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .case-study-text ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .case-study-text li {
+            padding: 20px;
+            border: 1px solid rgba(203, 203, 203, 0.1);
+            background: rgba(33, 77, 114, 0.05);
+            border-radius: 10px;
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .case-study-text li strong {
             color: #98633F;
-            font-weight: 400;
-            font-style: italic;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
-        /* Updated Footer Styles */
+        .case-study-text li:last-child {
+            grid-column: 1 / -1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+            padding: 40px;
+            background: rgba(152, 99, 63, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(152, 99, 63, 0.3);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 5, 8, 0.3);
+            border-radius: 10px;
+        }
+
+        .result-number {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #98633F;
+            margin-bottom: 8px;
+        }
+
+        .result-label {
+            font-size: 1rem;
+            color: #CBCBCB;
+            font-weight: 500;
+        }
+
+        blockquote {
+            font-style: italic;
+            position: relative;
+            padding: 30px 40px;
+            border-left: 4px solid #98633F;
+            background: rgba(152, 99, 63, 0.1);
+            border-radius: 10px;
+            margin: 30px 0;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        blockquote p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        cite {
+            font-size: 1rem;
+            color: #98633F;
+            font-weight: 600;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* IMPROVED: Properly Centered Footer */
         .footer-section {
             background: rgba(64, 64, 64, 0.8);
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(203, 203, 203, 0.1);
             padding: 30px 40px;
             margin-top: 40px;
+            width: 100%;
         }
 
         .footer-content {
             display: flex;
             flex-direction: column;
             gap: 25px;
+            max-width: 100%;
+            margin: 0 auto;
         }
 
-        /* Contact Grid - Side by Side */
+        /* IMPROVED: Properly centered contact grid */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 60px;
             margin-bottom: 20px;
+            justify-items: center;
+            align-items: start;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-person {
-            text-align: left;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
         }
 
         .contact-person h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #98633F;
             margin-bottom: 8px;
         }
 
         .contact-person .role {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #CBCBCB;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             font-style: italic;
+            opacity: 0.9;
         }
 
         .contact-person .contact-details {
-            font-size: 0.9rem;
-            line-height: 1.4;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .contact-person a {
@@ -305,84 +752,169 @@
         }
 
         .footer-legal p {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin: 0;
         }
 
-        /* FOOTER OVERRIDE STYLES - Add this to your existing <style> section */
-
-        /* Override external CSS contact styles for footer */
-        .footer-section .contact-details {
-            display: block !important;
-            grid-template-columns: none !important;
-            gap: 0 !important;
-            background: none !important;
-            backdrop-filter: none !important;
-            border: none !important;
-            border-radius: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-
-        .footer-section .contact-grid {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 30px !important;
-            margin-bottom: 20px !important;
-            background: none !important;
-            border: none !important;
-            padding: 0 !important;
-        }
-
-        .footer-section .contact-person {
-            text-align: left !important;
-            background: none !important;
-            border: none !important;
-            border-radius: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-
-        .footer-section .contact-person .contact-details {
-            font-size: 0.9rem !important;
-            line-height: 1.4 !important;
-            background: none !important;
-            border: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            display: block !important;
-        }
-
-        /* Ensure footer layout works properly */
-        .footer-section .footer-content {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 25px !important;
-        }
-
-        .footer-section .footer-legal {
-            text-align: center !important;
-            padding-top: 20px !important;
-            border-top: 1px solid rgba(203, 203, 203, 0.1) !important;
-            background: none !important;
-            margin: 0 !important;
+        /* MOBILE OPTIMIZATIONS */
+        @media (max-width: 1200px) {
+            .wrapper {
+                max-width: 90%;
+            }
+            
+            .portfolio-grid {
+                gap: 30px;
+            }
         }
 
         @media (max-width: 768px) {
-            /* Mobile Footer */
-            .contact-grid {
+            .wrapper {
+                max-width: 95%;
+                padding: 0 15px;
+            }
+            
+            .header-container {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            
+            .nav-link {
+                padding: 12px 20px;
+            }
+            
+            .page-hero {
+                padding: 40px 20px 30px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .filter-nav {
+                padding: 20px;
+            }
+            
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            
+            .portfolio-main {
+                padding: 20px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .portfolio-main.filtered .portfolio-grid {
+                max-width: 100%;
+            }
+            
+            .featured-case-study {
+                padding: 40px 20px;
+            }
+            
+            .case-study-content {
+                max-width: 100%;
+            }
+            
+            .case-study-content > h2 {
+                font-size: 2rem;
+            }
+            
+            .case-study-text h3,
+            .case-study-video h3 {
+                font-size: 1.5rem;
+            }
+            
+            .results-stats {
                 grid-template-columns: 1fr;
                 gap: 20px;
+                padding: 20px;
+                max-width: 100%;
+            }
+            
+            .case-study-text ul {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                max-width: 100%;
+            }
+            
+            blockquote {
+                padding: 20px;
+                max-width: 100%;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                max-width: 400px;
             }
             
             .contact-person {
                 text-align: center;
             }
+            
+            .footer-section {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wrapper {
+                max-width: 100%;
+                padding: 0 10px;
+            }
+            
+            .header-container {
+                padding: 10px 15px;
+            }
+            
+            .nav-link {
+                padding: 10px 16px;
+            }
+            
+            .page-hero {
+                padding: 30px 15px 20px;
+            }
+            
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .portfolio-main {
+                padding: 15px;
+            }
+            
+            .featured-case-study {
+                padding: 30px 15px;
+            }
+            
+            .case-study-content {
+                max-width: 100%;
+            }
+            
+            .contact-grid {
+                max-width: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Parallax Background -->
+    <!-- Enhanced Parallax Background -->
     <div class="parallax-bg"></div>
     
     <!-- Box Model Wrapper -->
@@ -646,14 +1178,14 @@
                                     </div>
                             </div>
                         </div>
-                    </div>
                     
                     <!-- Web Development Coming Soon Card -->
-                    <div class="column-spacer">
-                        <div class="coming-soon-card">
-                            <div class="coming-soon-icon">💻</div>
-                            <h3>More Web Projects Coming Soon</h3>
-                            <p>E-commerce platforms, SaaS applications, and enterprise solutions</p>
+                        <div class="column-spacer">
+                            <div class="coming-soon-card">
+                                <div class="coming-soon-icon">💻</div>
+                                <h3>More Web Projects Coming Soon</h3>
+                                <p>E-commerce platforms, SaaS applications, and enterprise solutions</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -953,8 +1485,8 @@
                         </div>
 
                         <div class="portfolio-item">
-                            <div class="video-container" onclick="openYouTubeModal('33nI32c64Y4', 'Dynamic Marketing Brochure');">
-                                <img src="jgbrochurethumbnail.png" alt="Seller Brochure Video Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="video-container" onclick="openVimeoModal('1106768555', 'Dynamic Marketing Brochure');">
+                                <img src="jgbrochurethumbnail.png" alt="Seller Brochure Video Thumbnail">
                                 <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(152, 99, 63, 0.8); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">▶</div>
                             </div>
                             <div class="item-content">
@@ -964,8 +1496,8 @@
                         </div>
 
                         <div class="portfolio-item">
-                            <div class="video-container" onclick="openYouTubeModal('6IG3teZlB14', 'Monthly Roundup Video');">
-                                <img src="edhmonthlythumbnail.png" alt="Monthly Roundup Video Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="video-container" onclick="openVimeoModal('1106768638', 'Monthly Roundup Video');">
+                                <img src="edhmonthlythumbnail.png" alt="Monthly Roundup Video Thumbnail">
                                 <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(152, 99, 63, 0.8); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">▶</div>
                             </div>
                             <div class="item-content">
@@ -1162,30 +1694,42 @@
             </div>
         </main>
         
-        <!-- Featured Case Study Section with Video -->
+        <!-- IMPROVED: Featured Case Study Section - Single Column with Prominent Video -->
         <section class="featured-case-study">
             <div class="case-study-content">
-                <h2>Featured Case Study: Custom CRM & Transaction Management System</h2>
+                <h2>Featured Case Study:<br><span style="font-size: 0.85em;">Custom CRM & Transaction Management System</span></h2>
                 <div class="case-study-grid">                                       
+                    <!-- Video section comes first and is prominently featured -->
+                    <div class="case-study-video">
+                        <h3>Complete System Walkthrough</h3>
+                        <!-- Embedded Vimeo Video -->
+                        <div style="position: relative; width: 100%; max-width: 800px; height: 450px; background: #000; border-radius: 8px; overflow: hidden; cursor: pointer; margin: 0 auto;" onclick="openVimeoModal('1106768566', 'Custom CRM System Walkthrough');">
+                            <img src="recrmdemovidthumbnail.jpg" alt="Custom CRM System Walkthrough Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(152, 99, 63, 0.8); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); cursor: pointer;">▶</div>
+                        </div>
+                        <p>Watch this comprehensive demo showcasing the complete CRM system, from transaction input to automated reporting and everything in between.</p>
+                    </div>
+                    
+                    <!-- Text content comes second -->
                     <div class="case-study-text">
-                        <h3 style="color: #214D72;">The Challenge</h3>
+                        <h3>The Challenge</h3>
                         <p>A growing real estate brokerage was drowning in manual transaction management, missing critical deadlines, and struggling to maintain consistent communication with all parties involved in their deals. With multiple agents handling several transactions simultaneously, important details were falling through the cracks and client satisfaction was suffering.</p>
-                        
-                        <h3 style="color: #214D72;">The Solution</h3>
-                        <p>I designed and built a comprehensive custom CRM system using HighLevel, featuring:</p>
+                        <br>
+                        <h3>The Solution</h3>
+                        <p>We designed and built a comprehensive custom CRM system using HighLevel, featuring:</p>
                         <ul>
-                            <li><strong>Custom Transaction Input Portal:</strong> Centralized dashboard where agents input contract details, deadlines, and all party information</li>
-                            <li><strong>Automated Contact Management:</strong> All transaction participants (buyers, sellers, agents, lenders, escrow, title, insurance, vendors) automatically linked by property address</li>
-                            <li><strong>Smart Pipeline System:</strong> Transactions move through stages with automated deadline tracking and agent prompts</li>
-                            <li><strong>Personalized Communication:</strong> Custom automated emails to each party type with relevant information and deadline reminders</li>
-                            <li><strong>Document Management:</strong> Contract upload, storage, and automatic distribution to all relevant parties</li>
-                            <li><strong>Lead Nurturing System:</strong> New prospects automatically enter educational email sequences tailored to buyers, sellers, or investors</li>
-                            <li><strong>Closing Analytics:</strong> Automated data collection and monthly reporting for transactions, volume, and commissions</li>
-                            <li><strong>One-Click Reporting:</strong> Instant access to agent and company performance metrics (all-time, YTD, monthly)</li>
-                            <li><strong>Integrated Marketing:</strong> Direct mail and gift automation for prospects, clients, anniversaries, and birthdays</li>
+                            <li><strong>Custom Transaction Input Portal</strong>Centralized dashboard where agents input contract details, deadlines, and all party information</li>
+                            <li><strong>Automated Contact Management</strong>All transaction participants automatically linked by property address</li>
+                            <li><strong>Smart Pipeline System</strong>Transactions move through stages with automated deadline tracking and agent prompts</li>
+                            <li><strong>Personalized Communication</strong>Custom automated emails to each party type with relevant information and deadline reminders</li>
+                            <li><strong>Document Management</strong>Contract upload, storage, and automatic distribution to all relevant parties</li>
+                            <li><strong>Lead Nurturing System</strong>New prospects automatically enter educational email sequences tailored to buyers, sellers, or investors</li>
+                            <li><strong>Closing Analytics</strong>Automated data collection and monthly reporting for transactions, volume, and commissions</li>
+                            <li><strong>One-Click Reporting</strong>Instant access to agent and company performance metrics (all-time, YTD, monthly)</li>
+                            <li><strong>Integrated Marketing</strong>Direct mail and gift automation for prospects, clients, anniversaries, and birthdays</li>
                         </ul>
-                        
-                        <h3 style="color: #214D72;">The Results</h3>
+                        <br>
+                        <h3>The Results</h3>
                         <div class="results-stats">
                             <div class="result-item">
                                 <span class="result-number">95%</span>
@@ -1206,34 +1750,21 @@
                             <cite>- Sarah Mitchell, Broker/Owner, Premier Real Estate Group</cite>
                         </blockquote>
                     </div>
-                    
-                    <div class="case-study-video">
-                        <h3 style="color: #214D72;">Complete System Walkthrough</h3>
-                        <!-- Embedded Local Video -->
-                        <div class="video-container" onclick="openVideoModal('recrmdemovideo.mp4', 'Custom CRM System Walkthrough');">
-                            <video width="400" height="225" preload="metadata" muted>
-                                <source src="recrmdemovideo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(152, 99, 63, 0.8); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); cursor: pointer;">▶</div>
-                        </div>
-                        <p>Watch this comprehensive demo showcasing the complete CRM system, from transaction input to automated reporting and everything in between.</p>
-                    </div>
                 </div>
             </div>
         </section>
         
-        <!-- Footer -->
+        <!-- Improved Footer with Properly Centered Contacts -->
         <footer class="footer-section">
             <div class="footer-content">
-                <!-- Contact Grid - Side by Side -->
+                <!-- Contact Grid - Properly Centered -->
                 <div class="contact-grid">
                     <!-- Mindy on the Left -->
                     <div class="contact-person">
                         <h4>Mindy Sideris</h4>
-                        <div class="role">Full-Stack & CRM Developer | Creative Technologist</div>
+                        <div class="role">Full-Stack & CRM Developer<br>&amp; Creative Technologist</div>
                         <div class="contact-details">
-                            <a href="mailto:mindysideris@gmail.com" style="color: #CBCBCB; text-decoration: none;">mindysideris@gmail.com</a><br>
+                            <a href="mailto:mindysideris@gmail.com">mindysideris@gmail.com</a><br>
                             (916) 932-3131
                         </div>
                     </div>
@@ -1243,7 +1774,7 @@
                         <h4>Guillermo Serafin</h4>
                         <div class="role">Consultant</div>
                         <div class="contact-details">
-                            <a href="mailto:info@thecultyourcompany.com" style="color: #CBCBCB; text-decoration: none;">info@thecultyourcompany.com</a><br>
+                            <a href="mailto:info@thecultyourcompany.com">info@thecultyourcompany.com</a><br>
                             (279) 900-6256
                         </div>
                     </div>
@@ -1257,15 +1788,8 @@
         </footer>
     </div>
     
-    <!-- JavaScript for Portfolio Filtering, Parallax, and Carousels -->
+    <!-- Fixed JavaScript for Portfolio Filtering, Parallax, and Carousels -->
     <script>
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.parallax-bg');
-            const speed = scrolled * 0.5;
-            parallax.style.transform = `translateY(${speed}px)`;
-        });
         
         // Portfolio filter functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -1415,8 +1939,7 @@
             // Update button states
             prevBtn.disabled = currentIndex <= 0;
             nextBtn.disabled = currentIndex >= images.length - 1;
-            
-            // Always show buttons if there are multiple images
+                        // Always show buttons if there are multiple images
             if (images.length <= 1) {
                 prevBtn.style.display = 'none';
                 nextBtn.style.display = 'none';
@@ -1528,15 +2051,15 @@
             popup.document.close();
         }
 
-        // YouTube video modal functionality - with muted audio by default
-        function openYouTubeModal(videoId, title) {
+        // Vimeo video modal functionality - with muted audio by default
+        function openVimeoModal(videoId, title) {
             // Calculate center position
             const windowWidth = 900;
             const windowHeight = 600;
             const left = (screen.width - windowWidth) / 2;
             const top = (screen.height - windowHeight) / 2;
             
-            const popup = window.open('', 'youtubeModal', `toolbar=0,location=0,menubar=0,scrollbars=1,width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
+            const popup = window.open('', 'vimeoModal', `toolbar=0,location=0,menubar=0,scrollbars=1,width=${windowWidth},height=${windowHeight},left=${left},top=${top}`);
             
             const videoHTML = `
                 <!DOCTYPE html>
@@ -1563,7 +2086,7 @@
                             margin-bottom: 20px;
                             font-family: 'Playfair Display', serif;
                         }
-                        .youtube-player { 
+                        .vimeo-player { 
                             width: 100%;
                             max-width: 800px;
                             height: 450px;
@@ -1583,12 +2106,10 @@
                 <body>
                     <div class="video-container">
                         <h1 class="video-title">${title}</h1>
-                        <iframe class="youtube-player" 
-                                src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&modestbranding=1&rel=0&showinfo=0&controls=1"
-                                title="${title}" 
+                        <iframe class="vimeo-player" 
+                                src="https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1&title=0&byline=0&portrait=0&badge=0" 
                                 frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allow="autoplay; fullscreen; picture-in-picture" 
                                 allowfullscreen>
                         </iframe>
                         <div class="video-note">

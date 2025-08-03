@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - HighLevel Integrations</title>
+    <link rel="icon" type="image/png" href="ms.png">
+    <link rel="shortcut icon" type="image/png" href="ms.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Header and Navigation Styles */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            backdrop-filter: blur(20px);
+            background: rgba(0, 5, 8, 0.95);
+            border-bottom: 2px solid rgba(203, 203, 203, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #CBCBCB;
+            font-weight: 600;
+        }
+
+        .logo-title {
+            font-size: 0.9rem;
+            color: #98633F;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 14px 28px;
+            color: #CBCBCB;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background: rgba(203, 203, 203, 0.08);
+            border: 2px solid rgba(203, 203, 203, 0.25);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            backdrop-filter: blur(20px);
+            background: rgba(152, 99, 63, 0.2);
+            border: 2px solid rgba(152, 99, 63, 0.6);
+            color: #98633F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(152, 99, 63, 0.3);
+            font-weight: 700;
+        }
+
+        /* Thank You Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #000508 0%, #1a1a1a 50%, #000508 100%);
+            color: #CBCBCB;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(152, 99, 63, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(152, 99, 63, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, #000508 0%, #1a1a1a 50%, #000508 100%);
+            z-index: -1;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .thank-you-content {
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .thank-you-icon {
+            font-size: 4rem;
+            color: #98633F;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .thank-you-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #98633F;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .thank-you-content .subtitle {
+            font-size: 1.3rem;
+            color: #CBCBCB;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .thank-you-details {
+            background: rgba(64, 64, 64, 0.3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(152, 99, 63, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .thank-you-details h2 {
+            font-family: 'Playfair Display', serif;
+            color: #98633F;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-details p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .highlight-text {
+            color: #98633F;
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid;
+        }
+
+        .btn-primary {
+            background: rgba(152, 99, 63, 0.2);
+            border-color: #98633F;
+            color: #98633F;
+        }
+
+        .btn-primary:hover {
+            background: #98633F;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(152, 99, 63, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(203, 203, 203, 0.1);
+            border-color: #CBCBCB;
+            color: #CBCBCB;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(203, 203, 203, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles */
+        .footer-section {
+            background: rgba(64, 64, 64, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(203, 203, 203, 0.1);
+            padding: 30px 40px;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 20px;
+            justify-items: center;
+            align-items: start;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-person {
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .contact-person h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #98633F;
+            margin-bottom: 8px;
+        }
+
+        .contact-person .role {
+            font-size: 1rem;
+            color: #CBCBCB;
+            margin-bottom: 12px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .contact-person .contact-details {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .contact-person a {
+            color: #CBCBCB;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-person a:hover {
+            color: #98633F;
+            text-decoration: underline;
+        }
+
+        .footer-legal {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(203, 203, 203, 0.1);
+        }
+
+        .footer-legal p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #98633F;
+        }
+
+        /* FOOTER OVERRIDE STYLES - Prevent external CSS contact-details grey boxes */
+        
+        /* Override external CSS contact styles for footer */
+        .footer-section .contact-details {
+            display: block !important;
+            grid-template-columns: none !important;
+            gap: 0 !important;
+            background: none !important;
+            backdrop-filter: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .footer-section .contact-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 60px !important;
+            margin-bottom: 20px !important;
+            justify-items: center !important;
+            align-items: start !important;
+            max-width: 800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .footer-section .contact-person {
+            text-align: center !important;
+            width: 100% !important;
+            max-width: 300px !important;
+            background: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .footer-section .contact-person .contact-details {
+            font-size: 1rem !important;
+            line-height: 1.6 !important;
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: block !important;
+        }
+
+        /* Ensure footer layout works properly */
+        .footer-section .footer-content {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 25px !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+        }
+
+        .footer-section .footer-legal {
+            text-align: center !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(203, 203, 203, 0.1) !important;
+            background: none !important;
+            margin: 0 !important;
+        }
+
+        .footer-section .footer-legal p {
+            font-size: 0.9rem !important;
+            margin: 0 !important;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .wrapper {
+                max-width: 95%;
+                padding: 0 15px;
+            }
+            
+            .header-container {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            
+            .nav-link {
+                padding: 12px 20px;
+            }
+
+            .thank-you-content {
+                padding: 60px 15px;
+            }
+
+            .thank-you-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .thank-you-content .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .thank-you-details {
+                padding: 25px;
+                margin: 30px 0;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+            
+            /* Mobile Footer - Override the !important rules for mobile */
+            .footer-section .contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+                max-width: 400px !important;
+            }
+            
+            .contact-person {
+                text-align: center;
+            }
+            
+            .footer-section {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .thank-you-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .thank-you-icon {
+                font-size: 3rem;
+            }
+
+            .thank-you-details {
+                padding: 20px;
+            }
+            
+            /* Mobile Footer - Further adjustments for very small screens */
+            .footer-section .contact-grid {
+                max-width: 300px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+    
+    <!-- Box Model Wrapper -->
+    <div class="wrapper">
+        <!-- Header with Navigation -->
+        <header class="header-container">
+            <div class="logo-section">
+                <img src="ms.png" alt="MS Logo" class="logo-image" width="60" height="60">
+                <div class="logo-text">
+                    <span class="logo-name">HighLevel</span>
+                    <span class="logo-title">Integrations</span>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Thank You Content -->
+        <main class="thank-you-content">
+            <div class="thank-you-icon">✅</div>
+            
+            <h1>Thank You!</h1>
+            
+            <p class="subtitle">Your message has been received and we truly appreciate you reaching out to us.</p>
+            
+            <div class="thank-you-details">
+                <h2>What Happens Next?</h2>
+                <p>We'll be <span class="highlight-text">contacting you within 24 hours</span> to discuss your project in detail.</p>
+                <p>We're looking forward to learning more about your goals and discovering how we can help transform your business with the right technology solutions.</p>
+                <p>In the meantime, feel free to explore our portfolio to see examples of our recent work, or check out our other services.</p>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="portfolio.html" class="btn btn-primary">View Our Portfolio</a>
+                <a href="index.html" class="btn btn-secondary">Return to Home</a>
+            </div>
+        </main>
+        
+        <!-- Footer with Contact Information -->
+        <footer class="footer-section">
+            <div class="footer-content">
+                <!-- Contact Grid -->
+                <div class="contact-grid">
+                    <!-- Mindy on the Left -->
+                    <div class="contact-person">
+                        <h4>Mindy Sideris</h4>
+                        <div class="role">Full-Stack & CRM Developer<br>&amp; Creative Technologist</div>
+                        <div class="contact-details">
+                            <a href="mailto:mindysideris@gmail.com">mindysideris@gmail.com</a><br>
+                            (916) 932-3131
+                        </div>
+                    </div>
+                    
+                    <!-- Guillermo on the Right -->
+                    <div class="contact-person">
+                        <h4>Guillermo Serafin</h4>
+                        <div class="role">Consultant</div>
+                        <div class="contact-details">
+                            <a href="mailto:info@thecultyourcompany.com">info@thecultyourcompany.com</a><br>
+                            (279) 900-6256
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Copyright Centered at Bottom -->
+                <div class="footer-legal">
+                    <p>&copy; 2025 HighLevel Integrations. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- JavaScript for Parallax Effect -->
+    <script>
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-bg');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+        
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
